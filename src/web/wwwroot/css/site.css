@@ -1,1 +1,4 @@
 /* split the css into multiple files */
+.site-logo {
+    width: 20vw;
+}
