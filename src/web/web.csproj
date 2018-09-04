@@ -9,8 +9,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Pages\_Shared\ViewComponents\" />
-    <Folder Include="Pages\_Shared\PartialViews\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\PartialViews\" />
     <Folder Include="wwwroot\images\" />
   </ItemGroup>
 </Project>
