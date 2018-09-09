@@ -29,10 +29,15 @@
     </environment>
 </head>
 <body>
-    <header>
-        <img class="site-logo" src="~/images/logo.svg" />
-        kodex
-        <a href="#footerNav" class="footer-nav-link">Menu</a>
+    <header class="site-header">
+        <a asp-page="/Index" class="site-logo-link">
+            <img class="site-logo" src="~/images/logo.svg" />
+        </a>
+        <div class="site-header-block">
+            <div class="site-header-circle"></div>
+            kodex
+            <a href="#footerNav" class="footer-nav-link">Menu</a>
+        </div>
     </header>
     <main class="container body-content">
         @RenderBody()

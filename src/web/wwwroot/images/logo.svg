@@ -26,7 +26,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1"
-     inkscape:cx="226.75172"
+     inkscape:cx="164.25172"
      inkscape:cy="305.85296"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -68,9 +68,9 @@
        sodipodi:cx="-350"
        sodipodi:type="arc"
        id="brian"
-       style="fill:#0000ff;fill-opacity:1" />
+       style="fill:#000000;fill-opacity:1" />
     <path
-       style="fill:#00ff00;fill-opacity:1"
+       style="fill:#000000;fill-opacity:1"
        id="melissa"
        sodipodi:type="arc"
        sodipodi:cx="-350"
@@ -92,9 +92,9 @@
        sodipodi:cx="370"
        sodipodi:type="arc"
        id="lydia"
-       style="fill:#800080;fill-opacity:1" />
+       style="fill:#000000;fill-opacity:1" />
     <path
-       style="fill:#ffff00;fill-opacity:1"
+       style="fill-opacity:1"
        id="amber"
        sodipodi:type="arc"
        sodipodi:cx="370"
