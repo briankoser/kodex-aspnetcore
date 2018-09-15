@@ -30,6 +30,7 @@
     .site-header-circle:after {
         border: 5vh solid black;
         border-radius: 11vh;
+        box-sizing: content-box;
         content: "";
         height: 12vh;
         left: -12.5vh;

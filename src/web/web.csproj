@@ -13,7 +13,6 @@
     <Folder Include="Styles\07-Utilities\" />
     <Folder Include="Styles\06-Pages\" />
     <Folder Include="Styles\05-Layouts\" />
-    <Folder Include="Styles\02-Vendors\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\PartialViews\" />
