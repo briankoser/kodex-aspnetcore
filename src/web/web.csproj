@@ -3,12 +3,17 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Styles\07-Utilities\" />
+    <Folder Include="Styles\06-Pages\" />
+    <Folder Include="Styles\05-Layouts\" />
+    <Folder Include="Styles\02-Vendors\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\PartialViews\" />

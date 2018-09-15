@@ -1,27 +1,3 @@
-/* *, @viewport, ::selection */
-
-/* form, fieldset, legend, label, input, button, select, optgroup, option, 
-  datalist, textarea, output */
-
-/* hgroup, h1, h2, h3, h4, h5, h6 */
-
-/* ul, ol, li, dl, dt, dd, menu, menuitem */
-
-/* canvas, object, embed, img, audio, video, track, map, area, iframe */
-
-/* hr */
-
-/* a, strong, em, b, i, u, s, sup, sub, small, abbr, dfn, mark, del, ins, q, 
-  cite, data, progress, time, meter, code, var, samp, kbd, keygen, bdi, bdo, 
-  ruby, rt, rp, span */
-
-/* html, body, header, footer, nav, main, article, aside, section, p, pre,
-blockquote, figure, figcaption, address, summary, details, div */
-body {
-  margin: 0; }
-
-/*  table, caption, colgroup, col, thead, tfoot, tbody, tr, th, td */
-
 .site-header {
   display: flex;
   align-items: center; }
