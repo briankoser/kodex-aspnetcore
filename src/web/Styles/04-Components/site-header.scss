@@ -1,4 +1,7 @@
 ﻿.site-header {
+    $logo-size: 10vh;
+    $site-nav-height: 12vh;
+
     display: flex;
     align-items: center;
 
@@ -8,20 +11,20 @@
     }
 
     .site-logo {
-        height: 10vh;
-        width: 10vh;
+        height: $logo-size;
+        width: $logo-size;
     }
 
     .site-header-block {
         background: black;
-        height: 12vh;
+        height: $site-nav-height;
         margin-left: -4vh;
         width: 100%;
     }
 
     .site-header-circle {
         background-color: white;
-        height: 12vh;
+        height: $site-nav-height;
         overflow: hidden;
         position: absolute;
         width: 11vw;
@@ -32,7 +35,7 @@
         border-radius: 11vh;
         box-sizing: content-box;
         content: "";
-        height: 12vh;
+        height: $site-nav-height;
         left: -12.5vh;
         position: absolute;
         top: -5vh;
