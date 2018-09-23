@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2035
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web", "src\web\web.csproj", "{CFFEA803-722A-40B1-916F-D41DCBB200CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "src\web\Web.csproj", "{CFFEA803-722A-40B1-916F-D41DCBB200CC}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "application", "src\application\application\application.csproj", "{5D1327CE-FCE7-42A0-8662-F52474A1CBE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\application\application\Application.csproj", "{5D1327CE-FCE7-42A0-8662-F52474A1CBE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "infrastructure", "src\infrastructure\infrastructure.csproj", "{19D20F8E-9039-4C02-ADD2-6EFC5BAD1369}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\infrastructure\Infrastructure.csproj", "{19D20F8E-9039-4C02-ADD2-6EFC5BAD1369}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

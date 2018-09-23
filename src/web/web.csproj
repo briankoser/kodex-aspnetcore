@@ -12,9 +12,9 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Styles\04-Components\" />
     <Folder Include="Styles\07-Utilities\" />
     <Folder Include="Styles\06-Pages\" />
-    <Folder Include="Styles\05-Layouts\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\PartialViews\" />

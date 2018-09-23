@@ -4,8 +4,4 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>kodex.Infrastructure</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="data\migrations\" />
-  </ItemGroup>
 </Project>
