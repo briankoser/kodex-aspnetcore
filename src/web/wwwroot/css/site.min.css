@@ -182,6 +182,69 @@ summary
 {
   flex-grow: 1
 }
+.site-header
+{
+  display: flex;
+  align-items: center
+}
+.site-header .site-logo-link
+{
+  margin-left: 2vw;
+  z-index: 1
+}
+.site-header .site-logo
+{
+  height: 10vh;
+  width: 10vh
+}
+.site-header .site-header-block
+{
+  background: #000;
+  height: 12vh;
+  margin-left: -4vh;
+  width: 100%
+}
+.site-header .site-header-circle
+{
+  background-color: #fff;
+  height: 12vh;
+  overflow: hidden;
+  position: absolute;
+  width: 11vw
+}
+.site-header .site-header-circle:after
+{
+  border: 5vh solid #000;
+  border-radius: 11vh;
+  box-sizing: content-box;
+  content: "";
+  height: 12vh;
+  left: -12.5vh;
+  position: absolute;
+  top: -5vh;
+  width: 12.5vh
+}
+.site-header .site-header-block nav
+{
+  color: #fff;
+  height: 100%;
+  margin-left: 11vw;
+  padding-left: 11vw;
+  display: flex;
+  align-items: center
+}
+.site-header .site-header-block a
+{
+  color: #fff
+}
+.site-header .site-header-block .site-title
+{
+  flex-grow: 2
+}
+.site-header .site-header-block .footer-nav-link
+{
+  flex-grow: 1
+}
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
 html
 {
@@ -302,6 +365,69 @@ progress
 summary
 {
   display: list-item
+}
+.site-header
+{
+  display: flex;
+  align-items: center
+}
+.site-header .site-logo-link
+{
+  margin-left: 2vw;
+  z-index: 1
+}
+.site-header .site-logo
+{
+  height: 10vh;
+  width: 10vh
+}
+.site-header .site-header-block
+{
+  background: #000;
+  height: 12vh;
+  margin-left: -4vh;
+  width: 100%
+}
+.site-header .site-header-circle
+{
+  background-color: #fff;
+  height: 12vh;
+  overflow: hidden;
+  position: absolute;
+  width: 11vw
+}
+.site-header .site-header-circle:after
+{
+  border: 5vh solid #000;
+  border-radius: 11vh;
+  box-sizing: content-box;
+  content: "";
+  height: 12vh;
+  left: -12.5vh;
+  position: absolute;
+  top: -5vh;
+  width: 12.5vh
+}
+.site-header .site-header-block nav
+{
+  color: #fff;
+  height: 100%;
+  margin-left: 11vw;
+  padding-left: 11vw;
+  display: flex;
+  align-items: center
+}
+.site-header .site-header-block a
+{
+  color: #fff
+}
+.site-header .site-header-block .site-title
+{
+  flex-grow: 2
+}
+.site-header .site-header-block .footer-nav-link
+{
+  flex-grow: 1
 }
 .site-header
 {

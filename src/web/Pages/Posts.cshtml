@@ -1,0 +1,21 @@
+﻿@page
+@model PostsPageModel
+@{
+    ViewData["Title"] = "Posts";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@Model.Message</h3>
+
+<article>
+    @if (Model.Posts == null)
+    {
+        @("No posts found")
+    }
+    else
+    {
+        foreach(var post in Model.Posts)
+        {
+    <h1>@Html.DisplayFor(modelItem => post.Title)</h1>
+        }
+    }
+</article>

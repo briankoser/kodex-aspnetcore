@@ -6,6 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using kodex.Application.Interfaces;
+using kodex.Infrastructure.Data.DBAccess;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace kodex
 {
@@ -21,6 +25,7 @@ namespace kodex
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IPostsRepository, PostsRepository>();
             services.AddMvc();
         }
 

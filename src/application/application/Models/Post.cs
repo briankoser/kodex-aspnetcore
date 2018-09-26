@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.ComponentModel.DataAnnotations;
 
 namespace kodex.Application.Models
 {
@@ -15,9 +14,9 @@ namespace kodex.Application.Models
         public string Body { get; set; }
         public string BodyRaw { get; set; }
         public string Description { get; set; }
-        public DateTime? DatePublished { get; set; }
+        public DateTimeOffset? DatePublished { get; set; }
         public int? DatePublishedID { get; set; }
-        public DateTime? DateLastUpdated { get; set; }
+        public DateTimeOffset? DateLastUpdated { get; set; }
         public string Excerpt { get; set; }
         public string ImageUrl { get; set; }
         public bool IsPublic { get; set; }
