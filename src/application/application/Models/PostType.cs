@@ -6,7 +6,7 @@ namespace kodex.Application.Models
 {
     public class PostType
     {
-        public int ID { get; set; }
+        public int PostTypeID { get; set; }
         public string Code { get; set; }
         public string Name { get; set; }
     }

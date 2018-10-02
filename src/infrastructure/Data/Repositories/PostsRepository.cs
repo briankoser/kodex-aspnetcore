@@ -46,24 +46,27 @@ namespace kodex.Infrastructure.Data.DBAccess
             {
                 string query = @"SELECT * 
                                  FROM dbo.Posts 
-                                 WHERE (datepublished >= @StartDate OR @StartDate IS NULL)";
+                                 WHERE (datepublished >= @StartDate OR @StartDate IS NULL);";
                 conn.Open();
+                var result = await conn.QueryAsync<Post, PostType, Post>(
+                    query,
+                    (post, postType) => { post.PostType = postType; post.Authors = new List<Author>(); post.Authors.Add(new Author() { ID = 1, FirstName = "Toby", FullName = "Toby Flenderson" }); return post; },
+                    param: new { options.StartDate },
+                    splitOn: "PostTypeID");
 
-                var result = await conn.QueryAsync<Post>(query, new { options.StartDate });
-
-                // todo: get from db
-                var author = new Author() { ID = 1, FirstName = "Brian", FullName = "Brian Koser" };
-                var postType = new PostType() { ID = 1, Code = "post", Name = "Post" };
-                result = result.Select(post =>
-                {
-                    post.Authors = new List<Author>();
-                    post.Authors.Add(author);
-                    post.PostType = postType;
-                    post.PostUrl = $"/{post.PostType.Code}/{post.DatePublished.Value.Year}/{post.DatePublished.Value.Month}/{post.DatePublished.Value.Day}/{post.DatePublishedID}/{post.Slug}";
-                    return post;
-                });
 
                 return result.ToList();
+
+                //var results = cnn.QueryMultiple("select * from Courses where Category = 1 Order by CreationDate; select A.*, B.CourseId from Locations A Inner Join CourseLocations B on A.LocationId = B.LocationId Inner Join Course C On B.CourseId = B.CourseId And C.Category = 1");
+
+                //var courses = results.Read<Course>();
+                //var locations = results.Read<Location>(); //(Location will have that extra CourseId on it for the next part)
+                //foreach (var course in courses)
+                //{
+                //    course.Locations = locations.Where(a => a.CourseId == course.CourseId).ToList();
+                //}
+
+                // $"/{post.PostType.Code}/{post.DatePublished.Value.Year}/{post.DatePublished.Value.Mon☻th}/{post.DatePublished.Value.Day}/{post.DatePublishedID}/{post.Slug}";
             }
         }
     }
