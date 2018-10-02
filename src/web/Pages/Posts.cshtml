@@ -1,21 +1,25 @@
 ﻿@page
 @model PostsPageModel
 @{
-    ViewData["Title"] = "Posts";
+    ViewData["Title"] = "All";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
+<h1>@ViewData["Title"]</h1>
 
-<article>
-    @if (Model.Posts == null)
+@if (Model.Posts == null)
+{
+    @("No posts found")
+}
+else
+{
+    foreach (var post in Model.Posts)
     {
-        @("No posts found")
+        <article>
+            <header>
+                <h2><a href="@post.PostUrl">@Html.DisplayFor(modelItem => post.Title)</a></h2>
+                <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
+                <span class="post-author">@Html.DisplayFor(modelItem => post.AuthorsString)</span> ·
+                <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
+            </header>
+        </article>
     }
-    else
-    {
-        foreach(var post in Model.Posts)
-        {
-    <h1>@Html.DisplayFor(modelItem => post.Title)</h1>
-        }
-    }
-</article>
+}
