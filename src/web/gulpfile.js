@@ -1,7 +1,7 @@
 ﻿/// <binding BeforeBuild='sass' />
-var gulp = require("gulp")
-var fs = require("fs")
-var sass = require("gulp-sass")
+var gulp = require("gulp");
+var fs = require("fs");
+var sass = require("gulp-sass");
 
 gulp.task("sass", function () {
     return gulp.src('Styles/**/*.scss')

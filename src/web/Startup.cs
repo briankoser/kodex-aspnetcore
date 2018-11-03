@@ -10,6 +10,7 @@ using kodex.Application.Interfaces;
 using kodex.Infrastructure.Data.DBAccess;
 using System.Data;
 using System.Data.SqlClient;
+using Web;
 
 namespace kodex
 {
@@ -26,6 +27,7 @@ namespace kodex
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IPostsRepository, PostsRepository>();
+            services.AddTransient<ISqlDataSourceConfig, SqlDataSourceConfig>();
             services.AddMvc();
         }
 

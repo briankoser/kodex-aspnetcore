@@ -15,9 +15,9 @@ else
     {
         <article>
             <header>
-                <h2><a href="@post.PostUrl">@Html.DisplayFor(modelItem => post.Title)</a></h2>
+                <h2><a href="@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
                 <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
-                <span class="post-author">@Html.DisplayFor(modelItem => post.AuthorsString)</span> ·
+                <span class="post-author">@Html.DisplayFor(modelItem => post.Author.ShortName)</span> ·
                 <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
             </header>
         </article>
