@@ -1,0 +1,22 @@
+.site-footer {
+  color: white; }
+  .site-footer a {
+    color: white;
+    text-decoration: none; }
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 10vw;
+  margin-top: 2rem; }
+  .site-footer .footer-nav {
+    display: flex;
+    flex-basis: 90%;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    padding-left: 0; }
+  .site-footer .footer-nav li {
+    list-style-type: none; }
+  .site-footer .cc-logo {
+    flex-basis: 10%; }

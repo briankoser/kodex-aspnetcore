@@ -119,6 +119,10 @@ summary
 {
   display: list-item
 }
+a
+{
+  color: #000
+}
 .site-header
 {
   display: flex;
@@ -181,6 +185,39 @@ summary
 .site-header .site-header-block .footer-nav-link
 {
   flex-grow: 1
+}
+.site-footer
+{
+  color: #fff
+}
+.site-footer a
+{
+  color: #fff;
+  text-decoration: none
+}
+.site-footer
+{
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  height: 10vw;
+  margin-top: 2rem
+}
+.site-footer .footer-nav
+{
+  display: flex;
+  flex-basis: 90%;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-left: 0
+}
+.site-footer .footer-nav li
+{
+  list-style-type: none
+}
+.site-footer .cc-logo
+{
+  flex-basis: 10%
 }
 .site-header
 {
@@ -366,6 +403,10 @@ summary
 {
   display: list-item
 }
+a
+{
+  color: #000
+}
 .site-header
 {
   display: flex;
@@ -428,6 +469,39 @@ summary
 .site-header .site-header-block .footer-nav-link
 {
   flex-grow: 1
+}
+.site-footer
+{
+  color: #fff
+}
+.site-footer a
+{
+  color: #fff;
+  text-decoration: none
+}
+.site-footer
+{
+  display: flex;
+  align-items: center;
+  background-color: #000;
+  height: 10vw;
+  margin-top: 2rem
+}
+.site-footer .footer-nav
+{
+  display: flex;
+  flex-basis: 90%;
+  justify-content: space-around;
+  justify-content: space-evenly;
+  padding-left: 0
+}
+.site-footer .footer-nav li
+{
+  list-style-type: none
+}
+.site-footer .cc-logo
+{
+  flex-basis: 10%
 }
 .site-header
 {

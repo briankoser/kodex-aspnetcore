@@ -233,6 +233,8 @@ summary {
 /* a, strong, em, b, i, u, s, sup, sub, small, abbr, dfn, mark, del, ins, q, 
   cite, data, progress, time, meter, code, var, samp, kbd, keygen, bdi, bdo, 
   ruby, rt, rp, span */
+a {
+  color: black; }
 
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
@@ -282,6 +284,29 @@ blockquote, figure, figcaption, address, summary, details, div */
     flex-grow: 2; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }
+
+.site-footer {
+  color: white; }
+  .site-footer a {
+    color: white;
+    text-decoration: none; }
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  height: 10vw;
+  margin-top: 2rem; }
+  .site-footer .footer-nav {
+    display: flex;
+    flex-basis: 90%;
+    justify-content: space-around;
+    justify-content: space-evenly;
+    padding-left: 0; }
+  .site-footer .footer-nav li {
+    list-style-type: none; }
+  .site-footer .cc-logo {
+    flex-basis: 10%; }
 
 .site-header {
   display: flex;
