@@ -1,3 +1,9 @@
+@font-face {
+  font-family: ConcourseBlack;
+  src: url("/fonts/concourse/concourse_t8_regular.woff2") format("woff2"), url("/fonts/concourse/concourse_t8_regular.woff") format("woff"); }
+
+
+
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
 /* Document
    ========================================================================== */
@@ -348,6 +354,7 @@ blockquote, figure, figcaption, address, summary, details, div */
   .site-header .site-header-block a {
     color: white; }
   .site-header .site-header-block .site-title {
-    flex-grow: 2; }
+    flex-grow: 2;
+    font-family: ConcourseBlack; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }

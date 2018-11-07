@@ -45,8 +45,8 @@
     .site-header-block nav {
         color: white;
         height: 100%;
-        margin-left: 11vw;
-        padding-left: 11vw;
+        margin-left: 9vw;
+        padding-left: 9vw;
         display: flex;
         align-items: center;
     }
@@ -57,6 +57,8 @@
 
     .site-header-block .site-title {
         flex-grow: 2;
+        font-family: ConcourseBlack;
+        font-size: 4rem;
     }
 
     .site-header-block .footer-nav-link {

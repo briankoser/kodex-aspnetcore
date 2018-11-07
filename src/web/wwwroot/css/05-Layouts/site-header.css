@@ -38,6 +38,7 @@
   .site-header .site-header-block a {
     color: white; }
   .site-header .site-header-block .site-title {
-    flex-grow: 2; }
+    flex-grow: 2;
+    font-family: ConcourseBlack; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }
