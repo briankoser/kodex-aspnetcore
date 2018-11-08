@@ -330,5 +330,5 @@ ASALocalRun/
 .mfractor/
 
 # Commercial fonts
-src/web/wwwroot/css
+src/web/wwwroot/css/
 src/web/wwwroot/fonts/concourse
