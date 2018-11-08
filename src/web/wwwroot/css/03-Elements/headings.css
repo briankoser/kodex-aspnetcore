@@ -1,1 +1,21 @@
 /* hgroup, h1, h2, h3, h4, h5, h6 */
+h1,
+h2,
+h4 {
+  font-family: ConcourseLight, Concourse, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+
+h1,
+h2 {
+  margin: 1.414rem 0 0 0; }
+
+h1 + h2 {
+  margin-top: 0; }
+
+h1 {
+  font-size: 2.827rem; }
+
+h2 {
+  font-size: 1.414rem; }
+
+h3 {
+  font-size: 1rem; }

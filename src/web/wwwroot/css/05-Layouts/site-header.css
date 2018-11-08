@@ -31,14 +31,15 @@
   .site-header .site-header-block nav {
     color: white;
     height: 100%;
-    margin-left: 11vw;
-    padding-left: 11vw;
+    margin-left: 9vw;
+    padding-left: 9vw;
     display: flex;
     align-items: center; }
   .site-header .site-header-block a {
     color: white; }
   .site-header .site-header-block .site-title {
     flex-grow: 2;
-    font-family: ConcourseBlack; }
+    font-family: ConcourseBlack;
+    font-size: 3.998rem; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }

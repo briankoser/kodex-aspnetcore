@@ -1,2 +1,7 @@
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
+/**
+ * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+ */
+body {
+  font: 18px/1.3 Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
