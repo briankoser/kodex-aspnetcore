@@ -1,0 +1,19 @@
+﻿@function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    }
+
+    @return $value;
+}
+
+@function calcFontSizeRem($scale, $number) {
+    @return pow($scale, $number);
+}
+
+@function calcFontSizePx($base, $scale, $number) {
+    @return $base * calcFontSizeRem($scale, $number);
+}

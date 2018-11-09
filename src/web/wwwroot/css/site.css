@@ -32,21 +32,37 @@
   font-style: italic; }
 
 
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* Extend */
+
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
 
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
+/* I remove rules as they are set/overriden in other stylesheets */
 /* Document
    ========================================================================== */
-/**
- * Use a better box model (opinionated).
- */
-html {
-  box-sizing: border-box; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
 /**
  * Use a more readable tab size (opinionated).
  */
@@ -55,12 +71,9 @@ html {
   tab-size: 4; }
 
 /**
- * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 html {
-  line-height: 1.15;
-  /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
@@ -71,14 +84,6 @@ html {
  */
 body {
   margin: 0; }
-
-/* Grouping content
-   ========================================================================== */
-/**
- * Add the correct height in Firefox.
- */
-hr {
-  height: 0; }
 
 /* Text-level semantics
    ========================================================================== */
@@ -113,22 +118,6 @@ pre {
  */
 small {
   font-size: 80%; }
-
-/**
- * Prevent `sub` and `sup` elements from affecting the line height in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline; }
-
-sub {
-  bottom: -0.25em; }
-
-sup {
-  top: -0.5em; }
 
 /* Forms
    ========================================================================== */
@@ -251,50 +240,196 @@ summary {
 /* form, fieldset, legend, label, input, button, select, optgroup, option, 
   datalist, textarea, output */
 
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* Extend */
 /* hgroup, h1, h2, h3, h4, h5, h6 */
 h1,
-h2,
-h4 {
+h2 {
   font-family: ConcourseLight, Concourse, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
 
-h1,
-h2 {
-  margin: 1.414rem 0 0 0; }
+h1, .h1 {
+  font-size: 28.83252px;
+  font-size: 1.80203rem;
+  /*previously 2.8333333rem;*/
+  line-height: 3.8333333rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 2.5555556rem; }
 
-h1 + h2 {
-  margin-top: 0; }
+h2, .h2 {
+  font-size: 25.62891px;
+  font-size: 1.60181rem;
+  /*previously 2rem;*/
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 1.2777778rem; }
 
-h1 {
-  font-size: 2.827rem; }
+h3, .h3 {
+  font-size: 22.78125px;
+  font-size: 1.42383rem;
+  /*previously 1.3888889rem;*/
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0; }
 
-h2 {
-  font-size: 1.414rem; }
+h4, .h4 {
+  font-size: 20.25px;
+  font-size: 1.26563rem; }
 
-h3 {
-  font-size: 1rem; }
+h5, .h5,
+h6, .h6 {
+  font-size: 16px;
+  font-size: 1rem;
+  /*18px, 1rem*/
+  line-height: 1.2777778rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0; }
 
 /* ul, ol, li, dl, dt, dd, menu, menuitem */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0; }
 
 /* canvas, object, embed, img, audio, video, track, map, area, iframe */
 
 /* hr */
+hr {
+  border: 1px solid;
+  margin: -1px 0; }
 
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* Extend */
 /* a, strong, em, b, i, u, s, sup, sub, small, abbr, dfn, mark, del, ins, q, 
   cite, data, progress, time, meter, code, var, samp, kbd, keygen, bdi, bdo, 
   ruby, rt, rp, span */
+a,
+strong,
+em,
+b,
+i,
+small,
+code {
+  line-height: 0; }
+
 a {
   color: black; }
 
+sup,
+sub {
+  font-size: 16px;
+  font-size: 1rem;
+  /*previously 75%;*/
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* Extend */
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
-/**
- * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
- */
-body {
-  font: 18px/1.3 Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
+html,
+.root {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-size: 1.125rem;
+  /*previously 18px*/
+  line-height: 23px; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+body,
+.article {
+  /**
+     * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
+     */
+  font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 18px;
+  font-size: 1.125rem;
+  /*previously 1rem*/
+  line-height: 1.2777778rem;
+  /*max-width: 560px;
+    margin: auto;*/ }
+
+p,
+pre,
+blockquote,
+ul,
+ol,
+table {
+  margin-top: 0;
+  margin-bottom: 1.2777778rem; }
 
 /*  table, caption, colgroup, col, thead, tfoot, tbody, tr, th, td */
 
+/* 8:9 Major Second */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* Extend */
 .site-footer {
   color: white; }
   .site-footer a {
@@ -322,6 +457,7 @@ body {
   display: flex;
   align-items: center; }
   .site-header .site-logo-link {
+    height: 10vh;
     margin-left: 2vw;
     z-index: 1; }
   .site-header .site-logo {
@@ -360,6 +496,6 @@ body {
   .site-header .site-header-block .site-title {
     flex-grow: 2;
     font-family: ConcourseBlack;
-    font-size: 3.998rem; }
+    font-size: 3.5rem; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }

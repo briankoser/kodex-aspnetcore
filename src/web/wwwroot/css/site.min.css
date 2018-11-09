@@ -39,14 +39,6 @@
   font-style: italic
 }
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
-html
-{
-  box-sizing: border-box
-}
-*, *::before, *::after
-{
-  box-sizing: inherit
-}
 :root
 {
   -moz-tab-size: 4;
@@ -54,16 +46,11 @@ html
 }
 html
 {
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%
 }
 body
 {
   margin: 0
-}
-hr
-{
-  height: 0
 }
 abbr[title]
 {
@@ -81,21 +68,6 @@ code, kbd, samp, pre
 small
 {
   font-size: 80%
-}
-sub, sup
-{
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline
-}
-sub
-{
-  bottom: -.25em
-}
-sup
-{
-  top: -.5em
 }
 button, input, optgroup, select, textarea
 {
@@ -155,37 +127,103 @@ summary
 {
   display: list-item
 }
-h1, h2, h4
+h1, h2
 {
   font-family: ConcourseLight,Concourse,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'
 }
-h1, h2
+h1, .h1
 {
-  margin: 1.414rem 0 0 0
+  font-size: 28.83252px;
+  font-size: 1.80203rem;
+  line-height: 3.8333333rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 2.5555556rem
 }
-h1+h2
+h2, .h2
 {
-  margin-top: 0
+  font-size: 25.62891px;
+  font-size: 1.60181rem;
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 1.2777778rem
 }
-h1
+h3, .h3
 {
-  font-size: 2.827rem
+  font-size: 22.78125px;
+  font-size: 1.42383rem;
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0
 }
-h2
+h4, .h4
 {
-  font-size: 1.414rem
+  font-size: 20.25px;
+  font-size: 1.26563rem
 }
-h3
+h5, .h5, h6, .h6
 {
-  font-size: 1rem
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.2777778rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0
+}
+ul ul, ol ol, ul ol, ol ul
+{
+  margin-top: 0;
+  margin-bottom: 0
+}
+hr
+{
+  border: 1px solid;
+  margin: -1px 0
+}
+a, strong, em, b, i, small, code
+{
+  line-height: 0
 }
 a
 {
   color: #000
 }
-body
+sup, sub
 {
-  font: 18px/1.3 Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+sup
+{
+  top: -.5em
+}
+sub
+{
+  bottom: -.25em
+}
+html, .root
+{
+  box-sizing: border-box;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 23px
+}
+*, *::before, *::after
+{
+  box-sizing: inherit
+}
+body, .article
+{
+  font-family: Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.2777778rem
+}
+p, pre, blockquote, ul, ol, table
+{
+  margin-top: 0;
+  margin-bottom: 1.2777778rem
 }
 .site-footer
 {
@@ -227,6 +265,7 @@ body
 }
 .site-header .site-logo-link
 {
+  height: 10vh;
   margin-left: 2vw;
   z-index: 1
 }
@@ -279,7 +318,7 @@ body
 {
   flex-grow: 2;
   font-family: ConcourseBlack;
-  font-size: 3.998rem
+  font-size: 3.5rem
 }
 .site-header .site-header-block .footer-nav-link
 {
@@ -326,14 +365,6 @@ body
   font-style: italic
 }
 /*! modern-normalize | MIT License | https://github.com/sindresorhus/modern-normalize */
-html
-{
-  box-sizing: border-box
-}
-*, *::before, *::after
-{
-  box-sizing: inherit
-}
 :root
 {
   -moz-tab-size: 4;
@@ -341,16 +372,11 @@ html
 }
 html
 {
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%
 }
 body
 {
   margin: 0
-}
-hr
-{
-  height: 0
 }
 abbr[title]
 {
@@ -368,21 +394,6 @@ code, kbd, samp, pre
 small
 {
   font-size: 80%
-}
-sub, sup
-{
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline
-}
-sub
-{
-  bottom: -.25em
-}
-sup
-{
-  top: -.5em
 }
 button, input, optgroup, select, textarea
 {
@@ -442,37 +453,103 @@ summary
 {
   display: list-item
 }
-h1, h2, h4
+h1, h2
 {
   font-family: ConcourseLight,Concourse,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'
 }
-h1, h2
+h1, .h1
 {
-  margin: 1.414rem 0 0 0
+  font-size: 28.83252px;
+  font-size: 1.80203rem;
+  line-height: 3.8333333rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 2.5555556rem
 }
-h1+h2
+h2, .h2
 {
-  margin-top: 0
+  font-size: 25.62891px;
+  font-size: 1.60181rem;
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 1.2777778rem
 }
-h1
+h3, .h3
 {
-  font-size: 2.827rem
+  font-size: 22.78125px;
+  font-size: 1.42383rem;
+  line-height: 2.5555556rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0
 }
-h2
+h4, .h4
 {
-  font-size: 1.414rem
+  font-size: 20.25px;
+  font-size: 1.26563rem
 }
-h3
+h5, .h5, h6, .h6
 {
-  font-size: 1rem
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.2777778rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0
+}
+ul ul, ol ol, ul ol, ol ul
+{
+  margin-top: 0;
+  margin-bottom: 0
+}
+hr
+{
+  border: 1px solid;
+  margin: -1px 0
+}
+a, strong, em, b, i, small, code
+{
+  line-height: 0
 }
 a
 {
   color: #000
 }
-body
+sup, sub
 {
-  font: 18px/1.3 Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol'
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline
+}
+sup
+{
+  top: -.5em
+}
+sub
+{
+  bottom: -.25em
+}
+html, .root
+{
+  box-sizing: border-box;
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 23px
+}
+*, *::before, *::after
+{
+  box-sizing: inherit
+}
+body, .article
+{
+  font-family: Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+  font-size: 18px;
+  font-size: 1.125rem;
+  line-height: 1.2777778rem
+}
+p, pre, blockquote, ul, ol, table
+{
+  margin-top: 0;
+  margin-bottom: 1.2777778rem
 }
 .site-footer
 {
@@ -514,6 +591,7 @@ body
 }
 .site-header .site-logo-link
 {
+  height: 10vh;
   margin-left: 2vw;
   z-index: 1
 }
@@ -566,7 +644,7 @@ body
 {
   flex-grow: 2;
   font-family: ConcourseBlack;
-  font-size: 3.998rem
+  font-size: 3.5rem
 }
 .site-header .site-header-block .footer-nav-link
 {
