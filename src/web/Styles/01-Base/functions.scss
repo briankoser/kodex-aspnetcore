@@ -1,4 +1,6 @@
-﻿@function pow($number, $exponent) {
+﻿@import "variables.scss";
+
+@function pow($number, $exponent) {
     $value: 1;
 
     @if $exponent > 0 {
@@ -11,6 +13,9 @@
 }
 
 @function calcFontSizeRem($scale, $number) {
+    @if $number == -1 {
+        @return $mobile-font-size-small-scale;
+    }
     @return pow($scale, $number);
 }
 

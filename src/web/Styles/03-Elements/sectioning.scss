@@ -7,7 +7,7 @@ blockquote, figure, figcaption, address, summary, details, div */
 html,
 .root {
     box-sizing: border-box;
-    @include font-size(1); /*previously 18px*/
+    @include font-size(0); /*previously 18px*/
     line-height: 23px;
 }
 
@@ -23,7 +23,7 @@ body,
      * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
      */
     font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-    @include font-size(1); /*previously 1rem*/
+    @include font-size(0); /*previously 1rem*/
     line-height: 1.2777778rem;
     /*max-width: 560px;
     margin: auto;*/

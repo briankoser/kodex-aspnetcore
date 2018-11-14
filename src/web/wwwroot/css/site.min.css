@@ -133,36 +133,36 @@ h1, h2
 }
 h1, .h1
 {
-  font-size: 28.83252px;
-  font-size: 1.80203rem;
+  font-size: 50.88863px;
+  font-size: 2.82715rem;
   line-height: 3.8333333rem;
   margin-top: 1.2777778rem;
   margin-bottom: 2.5555556rem
 }
 h2, .h2
 {
-  font-size: 25.62891px;
-  font-size: 1.60181rem;
+  font-size: 35.98913px;
+  font-size: 1.9994rem;
   line-height: 2.5555556rem;
   margin-top: 1.2777778rem;
   margin-bottom: 1.2777778rem
 }
 h3, .h3
 {
-  font-size: 22.78125px;
-  font-size: 1.42383rem;
+  font-size: 25.452px;
+  font-size: 1.414rem;
   line-height: 2.5555556rem;
   margin-top: 1.2777778rem;
   margin-bottom: 0
 }
 h4, .h4
 {
-  font-size: 20.25px;
-  font-size: 1.26563rem
+  font-size: 25.452px;
+  font-size: 1.414rem
 }
 h5, .h5, h6, .h6
 {
-  font-size: 16px;
+  font-size: 18px;
   font-size: 1rem;
   line-height: 1.2777778rem;
   margin-top: 1.2777778rem;
@@ -188,8 +188,8 @@ a
 }
 sup, sub
 {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 16.002px;
+  font-size: .889rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline
@@ -202,11 +202,16 @@ sub
 {
   bottom: -.25em
 }
+small
+{
+  font-size: 16.002px;
+  font-size: .889rem
+}
 html, .root
 {
   box-sizing: border-box;
   font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 23px
 }
 *, *::before, *::after
@@ -217,7 +222,7 @@ body, .article
 {
   font-family: Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.2777778rem
 }
 p, pre, blockquote, ul, ol, table
@@ -459,36 +464,36 @@ h1, h2
 }
 h1, .h1
 {
-  font-size: 28.83252px;
-  font-size: 1.80203rem;
+  font-size: 50.88863px;
+  font-size: 2.82715rem;
   line-height: 3.8333333rem;
   margin-top: 1.2777778rem;
   margin-bottom: 2.5555556rem
 }
 h2, .h2
 {
-  font-size: 25.62891px;
-  font-size: 1.60181rem;
+  font-size: 35.98913px;
+  font-size: 1.9994rem;
   line-height: 2.5555556rem;
   margin-top: 1.2777778rem;
   margin-bottom: 1.2777778rem
 }
 h3, .h3
 {
-  font-size: 22.78125px;
-  font-size: 1.42383rem;
+  font-size: 25.452px;
+  font-size: 1.414rem;
   line-height: 2.5555556rem;
   margin-top: 1.2777778rem;
   margin-bottom: 0
 }
 h4, .h4
 {
-  font-size: 20.25px;
-  font-size: 1.26563rem
+  font-size: 25.452px;
+  font-size: 1.414rem
 }
 h5, .h5, h6, .h6
 {
-  font-size: 16px;
+  font-size: 18px;
   font-size: 1rem;
   line-height: 1.2777778rem;
   margin-top: 1.2777778rem;
@@ -514,8 +519,8 @@ a
 }
 sup, sub
 {
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 16.002px;
+  font-size: .889rem;
   line-height: 0;
   position: relative;
   vertical-align: baseline
@@ -528,11 +533,16 @@ sub
 {
   bottom: -.25em
 }
+small
+{
+  font-size: 16.002px;
+  font-size: .889rem
+}
 html, .root
 {
   box-sizing: border-box;
   font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 23px
 }
 *, *::before, *::after
@@ -543,7 +553,7 @@ body, .article
 {
   font-family: Concourse,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
   font-size: 18px;
-  font-size: 1.125rem;
+  font-size: 1rem;
   line-height: 1.2777778rem
 }
 p, pre, blockquote, ul, ol, table

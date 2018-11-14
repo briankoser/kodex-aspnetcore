@@ -19,7 +19,7 @@ a {
 
 sup,
 sub {
-    @include font-size(0); /*previously 75%;*/
+    @include font-size(-1);
     line-height: 0;
     position: relative;
     vertical-align: baseline;
@@ -31,4 +31,8 @@ sup {
 
 sub {
     bottom: -0.25em;
+}
+
+small {
+    @include font-size(-1);
 }
