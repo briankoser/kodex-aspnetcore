@@ -4,8 +4,7 @@
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
 
-html,
-.root {
+html, .root {
     box-sizing: border-box;
     @include font-size(0);
     line-height: 23px;
@@ -17,16 +16,22 @@ html,
     box-sizing: inherit;
 }
 
-body,
-.article {
+body, .article {
     /**
      * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
      */
     font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     @include font-size(0);
     line-height: 1.2777778rem;
+
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: oldstyle-nums;
     /*max-width: 560px;
     margin: auto;*/
+}
+
+article p:first-of-type::first-line {
+    font-variant-caps: small-caps;
 }
 
 p, 
@@ -36,5 +41,33 @@ ul,
 ol, 
 table {
     margin-top: 0;
-    margin-bottom: 1.2777778rem;
+    margin-bottom: 1.2777778rem; /* todo: set to line height */
+}
+
+p {
+        -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+            hyphens: auto;
+}
+
+blockquote {
+    /* todo: indent from left, italicize or reduce font size */
+    /* todo: align citation right, reduce font size, set off with em dash */
+    &.quoted p {
+        quotes: '“' '”' '‘' '’';
+    }
+
+    &.quoted p::before {
+        content: open-quote;
+        margin-left: -0.83ch;
+    }
+
+    &.quoted p::after {
+        content: close-quote;
+    }
+}
+
+figure.scrolling-table {
+    overflow-x: scroll;
+    max-width: 100%;
 }

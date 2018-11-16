@@ -13,10 +13,12 @@ code {
     line-height: 0;
 }
 
+/* todo: https://codepen.io/ghepting/pen/tLnHK/ */
 a {
     color: black;
 }
 
+/* todo: practical typography p123  */
 sup,
 sub {
     @include font-size(-1);
@@ -35,4 +37,17 @@ sub {
 
 small {
     @include font-size(-1);
+}
+
+abbr,
+.proper-name {
+        -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+            hyphens: manual;
+}
+
+/* don't use in title-case headings */
+abbr.smallcaps {
+    font-family: 'Concourse C4'; /* todo: correct font? */
+    text-transform: lowercase; /* todo: or uppercase? */
 }

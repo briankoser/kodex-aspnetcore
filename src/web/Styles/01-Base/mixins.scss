@@ -6,11 +6,11 @@
     font-size: #{ calcFontSizeRem($mobile-scale, $number) + 'rem'};
 }
 
-//@mixin line-height($number) {
-//    line-height: #{ $number * $leading + 'px'};
-//    line-height: #{ $number * $leading-rem + 'rem'};
-//}
-//
+/*@mixin line-height($number) {
+    line-height: #{ $number * $leading + 'px'};
+    line-height: #{ $number * $mobile-line-height + 'rem'};
+}*/
+
 //@mixin margin-top($number) {
 //    margin-top: #{ $number * $leading + 'px'};
 //    margin-top: #{ $number * $leading-rem + 'rem'};
