@@ -1,4 +1,5 @@
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -10,7 +11,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem

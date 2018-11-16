@@ -41,6 +41,6 @@
   .site-header .site-header-block .site-title {
     flex-grow: 2;
     font-family: ConcourseBlack;
-    font-size: 3.5rem; }
+    font-size: 16vmin; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }

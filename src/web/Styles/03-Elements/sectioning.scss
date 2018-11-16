@@ -7,7 +7,7 @@ blockquote, figure, figcaption, address, summary, details, div */
 html, .root {
     box-sizing: border-box;
     @include font-size(0);
-    line-height: 23px;
+    @include line-height(0);
 }
 
 *,
@@ -22,8 +22,7 @@ body, .article {
      */
     font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     @include font-size(0);
-    line-height: 1.2777778rem;
-
+    @include line-height(0);
     font-variant-ligatures: common-ligatures;
     font-variant-numeric: oldstyle-nums;
     /*max-width: 560px;

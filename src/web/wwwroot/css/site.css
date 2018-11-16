@@ -31,8 +31,8 @@
   font-weight: 700;
   font-style: italic; }
 
-
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -44,7 +44,21 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -58,7 +72,8 @@ $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLi
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
 /* Extend */
 
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -252,7 +267,8 @@ summary {
 /* form, fieldset, legend, label, input, button, select, optgroup, option, 
   datalist, textarea, output */
 
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -264,7 +280,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -278,44 +294,51 @@ $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLi
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
 /* Extend */
 /* hgroup, h1, h2, h3, h4, h5, h6 */
-h1,
-h2 {
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-variant-numeric: lining-nums; }
+
+h1, .h1,
+h2, .h2,
+h4, .h4 {
   font-family: ConcourseLight, Concourse, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; }
 
 h1, .h1 {
   font-size: 50.88863px;
   font-size: 2.82715rem;
-  /*previously 2.8333333rem;*/
-  line-height: 3.8333333rem;
+  line-height: 70.2px;
+  line-height: 3.9rem;
   margin-top: 1.2777778rem;
-  margin-bottom: 2.5555556rem; }
+  margin-bottom: 2.5555556rem;
+  letter-spacing: -0.03em; }
 
 h2, .h2 {
   font-size: 35.98913px;
   font-size: 1.9994rem;
-  /*previously 2rem;*/
-  line-height: 2.5555556rem;
+  line-height: 46.8px;
+  line-height: 2.6rem;
   margin-top: 1.2777778rem;
   margin-bottom: 1.2777778rem; }
 
-h3, .h3 {
-  font-size: 25.452px;
-  font-size: 1.414rem;
-  /*previously 1.3888889rem;*/
-  line-height: 2.5555556rem;
-  margin-top: 1.2777778rem;
-  margin-bottom: 0; }
-
+h3, .h3,
 h4, .h4 {
   font-size: 25.452px;
-  font-size: 1.414rem; }
+  font-size: 1.414rem;
+  line-height: 46.8px;
+  line-height: 2.6rem;
+  margin-top: 1.2777778rem;
+  margin-bottom: 0; }
 
 h5, .h5,
 h6, .h6 {
   font-size: 18px;
   font-size: 1rem;
-  /*18px, 1rem*/
-  line-height: 1.2777778rem;
+  line-height: 23.4px;
+  line-height: 1.3rem;
   margin-top: 1.2777778rem;
   margin-bottom: 0; }
 
@@ -331,10 +354,14 @@ ol ul {
 
 /* hr */
 hr {
-  border: 1px solid;
-  margin: -1px 0; }
+  height: 1em;
+  border: 0;
+  background: url(03-Elements/fleuron.svg) center no-repeat;
+  /* todo: get image */
+  background-size: contain; }
 
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -346,7 +373,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -371,9 +398,11 @@ small,
 code {
   line-height: 0; }
 
+/* todo: https://codepen.io/ghepting/pen/tLnHK/ */
 a {
   color: black; }
 
+/* todo: practical typography p123  */
 sup,
 sub {
   font-size: 16.002px;
@@ -390,9 +419,25 @@ sub {
 
 small {
   font-size: 16.002px;
-  font-size: 0.889rem; }
+  font-size: 0.889rem;
+  line-height: 23.4px;
+  line-height: 1.3rem; }
 
-/* 8:9 Major Second */
+abbr,
+.proper-name {
+  -ms-hyphens: manual;
+  -webkit-hyphens: manual;
+  hyphens: manual; }
+
+/* don't use in title-case headings */
+abbr.smallcaps {
+  font-family: 'Concourse C4';
+  /* todo: correct font? */
+  text-transform: lowercase;
+  /* todo: or uppercase? */ }
+
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -404,7 +449,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -416,7 +461,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -431,31 +476,34 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
 /* Extend */
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
-html,
-.root {
+html, .root {
   box-sizing: border-box;
   font-size: 18px;
   font-size: 1rem;
-  /*previously 18px*/
-  line-height: 23px; }
+  line-height: 23.4px;
+  line-height: 1.3rem; }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit; }
 
-body,
-.article {
+body, .article {
   /**
      * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
      */
   font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 18px;
   font-size: 1rem;
-  /*previously 1rem*/
-  line-height: 1.2777778rem;
+  line-height: 23.4px;
+  line-height: 1.3rem;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
   /*max-width: 560px;
     margin: auto;*/ }
+
+article p:first-of-type::first-line {
+  font-variant-caps: small-caps; }
 
 p,
 pre,
@@ -464,11 +512,83 @@ ul,
 ol,
 table {
   margin-top: 0;
-  margin-bottom: 1.2777778rem; }
+  margin-bottom: 1.2777778rem;
+  /* todo: set to line height */ }
+
+p {
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
+
+blockquote {
+  /* todo: indent from left, italicize or reduce font size */
+  /* todo: align citation right, reduce font size, set off with em dash */ }
+  blockquote.quoted p {
+    quotes: '“' '”' '‘' '’'; }
+  blockquote.quoted p::before {
+    content: open-quote;
+    margin-left: -0.83ch; }
+  blockquote.quoted p::after {
+    content: close-quote; }
+
+figure.scrolling-table {
+  overflow-x: scroll;
+  max-width: 100%; }
 
 /*  table, caption, colgroup, col, thead, tfoot, tbody, tr, th, td */
+table {
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums; }
 
-/* 8:9 Major Second */
+table .numeric-column {
+  text-align: right; }
+
+caption {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+
+td,
+th {
+  line-height: 1;
+  padding: 0.125em 0.5em 0.25em 0.5em; }
+
+th.oblique-heading {
+  transform: translate(2.58em, -2em) rotate(-60deg);
+  transform-origin: bottom left;
+  position: absolute; }
+
+@media (max-width: 25em) {
+  table,
+  caption,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    text-align: left; }
+  thead,
+  th:empty,
+  td:empty {
+    display: none;
+    visibility: hidden; }
+  th[data-title]:before,
+  td[data-title]:before {
+    content: attr(data-title) ": ";
+    display: inline-block;
+    width: 3.5em; } }
+
+.longform p {
+  margin-bottom: 0; }
+
+.longform p + p {
+  margin-top: 0;
+  text-indent: 1.5em; }
+
+.dark-theme h1 {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -480,7 +600,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -559,6 +679,13 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
   .site-header .site-header-block .site-title {
     flex-grow: 2;
     font-family: ConcourseBlack;
-    font-size: 3.5rem; }
+    font-size: 16vmin; }
   .site-header .site-header-block .footer-nav-link {
     flex-grow: 1; }
+
+.constant-line-breaks {
+  width: 21ch; }
+
+/* add tracking for strings of 3+ digits */
+.digit-string {
+  letter-spacing: 0.05em; }

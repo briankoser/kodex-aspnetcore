@@ -1,1 +1,40 @@
 /*  table, caption, colgroup, col, thead, tfoot, tbody, tr, th, td */
+table {
+  border-collapse: collapse;
+  font-variant-numeric: lining-nums tabular-nums; }
+
+table .numeric-column {
+  text-align: right; }
+
+caption {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
+
+td,
+th {
+  line-height: 1;
+  padding: 0.125em 0.5em 0.25em 0.5em; }
+
+th.oblique-heading {
+  transform: translate(2.58em, -2em) rotate(-60deg);
+  transform-origin: bottom left;
+  position: absolute; }
+
+@media (max-width: 25em) {
+  table,
+  caption,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    text-align: left; }
+  thead,
+  th:empty,
+  td:empty {
+    display: none;
+    visibility: hidden; }
+  th[data-title]:before,
+  td[data-title]:before {
+    content: attr(data-title) ": ";
+    display: inline-block;
+    width: 3.5em; } }

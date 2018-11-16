@@ -22,3 +22,18 @@
 @function calcFontSizePx($base, $scale, $number) {
     @return $base * calcFontSizeRem($scale, $number);
 }
+
+@function calcLineHeightRem($scale, $number) {
+    $line-height: 0;
+    $font-size: calcFontSizeRem($scale, $number);
+
+    @while $line-height < $font-size {
+        $line-height: $line-height + $mobile-line-height;
+    }
+    
+    @return $line-height;
+}
+
+@function calcLineHeightPx($base, $scale, $number) {
+    @return $base * calcLineHeightRem($scale, $number);
+}

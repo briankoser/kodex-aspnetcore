@@ -1,4 +1,5 @@
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -10,7 +11,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -35,9 +36,11 @@ small,
 code {
   line-height: 0; }
 
+/* todo: https://codepen.io/ghepting/pen/tLnHK/ */
 a {
   color: black; }
 
+/* todo: practical typography p123  */
 sup,
 sub {
   font-size: 16.002px;
@@ -54,4 +57,19 @@ sub {
 
 small {
   font-size: 16.002px;
-  font-size: 0.889rem; }
+  font-size: 0.889rem;
+  line-height: 23.4px;
+  line-height: 1.3rem; }
+
+abbr,
+.proper-name {
+  -ms-hyphens: manual;
+  -webkit-hyphens: manual;
+  hyphens: manual; }
+
+/* don't use in title-case headings */
+abbr.smallcaps {
+  font-family: 'Concourse C4';
+  /* todo: correct font? */
+  text-transform: lowercase;
+  /* todo: or uppercase? */ }

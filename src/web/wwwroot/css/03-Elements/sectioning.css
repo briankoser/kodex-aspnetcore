@@ -1,4 +1,5 @@
-/* 8:9 Major Second */
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -10,7 +11,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -22,7 +23,7 @@ $scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLin
 $scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
 $scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
 $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
-/* 8:9 Major Second */
+/* 1:√2 – Augmented fourth / Diminished fifth */
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );
 $scale0: ( fontSize: 1rem, line: 1.2777778rem
@@ -37,31 +38,34 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
 /* Extend */
 /* html, body, header, footer, nav, main, article, aside, section, p, pre,
 blockquote, figure, figcaption, address, summary, details, div */
-html,
-.root {
+html, .root {
   box-sizing: border-box;
   font-size: 18px;
   font-size: 1rem;
-  /*previously 18px*/
-  line-height: 23px; }
+  line-height: 23.4px;
+  line-height: 1.3rem; }
 
 *,
 *::before,
 *::after {
   box-sizing: inherit; }
 
-body,
-.article {
+body, .article {
   /**
      * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
      */
   font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-size: 18px;
   font-size: 1rem;
-  /*previously 1rem*/
-  line-height: 1.2777778rem;
+  line-height: 23.4px;
+  line-height: 1.3rem;
+  font-variant-ligatures: common-ligatures;
+  font-variant-numeric: oldstyle-nums;
   /*max-width: 560px;
     margin: auto;*/ }
+
+article p:first-of-type::first-line {
+  font-variant-caps: small-caps; }
 
 p,
 pre,
@@ -70,4 +74,25 @@ ul,
 ol,
 table {
   margin-top: 0;
-  margin-bottom: 1.2777778rem; }
+  margin-bottom: 1.2777778rem;
+  /* todo: set to line height */ }
+
+p {
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto; }
+
+blockquote {
+  /* todo: indent from left, italicize or reduce font size */
+  /* todo: align citation right, reduce font size, set off with em dash */ }
+  blockquote.quoted p {
+    quotes: '“' '”' '‘' '’'; }
+  blockquote.quoted p::before {
+    content: open-quote;
+    margin-left: -0.83ch; }
+  blockquote.quoted p::after {
+    content: close-quote; }
+
+figure.scrolling-table {
+  overflow-x: scroll;
+  max-width: 100%; }

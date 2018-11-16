@@ -18,7 +18,7 @@ h4, .h4 {
 
 h1, .h1 {
     @include font-size(3);
-    line-height: 3.8333333rem;
+    @include line-height(3);
     margin-top: 1.2777778rem;
     margin-bottom: 2.5555556rem;
     letter-spacing: -0.03em;
@@ -26,7 +26,7 @@ h1, .h1 {
 
 h2, .h2 {
     @include font-size(2);
-    line-height: 2.5555556rem;
+    @include line-height(2);
     margin-top: 1.2777778rem;
     margin-bottom: 1.2777778rem;
 }
@@ -34,7 +34,7 @@ h2, .h2 {
 h3, .h3,
 h4, .h4 {
     @include font-size(1);
-    line-height: 2.5555556rem;
+    @include line-height(1);
     margin-top: 1.2777778rem;
     margin-bottom: 0;
 }
@@ -42,7 +42,7 @@ h4, .h4 {
 h5, .h5,
 h6, .h6 {
     @include font-size(0);
-    line-height: 1.2777778rem;
+    @include line-height(0);
     margin-top: 1.2777778rem;
     margin-bottom: 0;
 }

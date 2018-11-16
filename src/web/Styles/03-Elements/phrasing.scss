@@ -37,6 +37,7 @@ sub {
 
 small {
     @include font-size(-1);
+    @include line-height(-1);
 }
 
 abbr,
