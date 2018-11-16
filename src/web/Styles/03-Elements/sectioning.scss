@@ -6,8 +6,6 @@ blockquote, figure, figcaption, address, summary, details, div */
 
 html, .root {
     box-sizing: border-box;
-    @include font-size(0);
-    @include line-height(0);
 }
 
 *,
@@ -23,6 +21,8 @@ body, .article {
     font-family: Concourse, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
     @include font-size(0);
     @include line-height(0);
+    @include margin-top(1);
+    @include margin-bottom(1);
     font-variant-ligatures: common-ligatures;
     font-variant-numeric: oldstyle-nums;
     /*max-width: 560px;
@@ -33,14 +33,13 @@ article p:first-of-type::first-line {
     font-variant-caps: small-caps;
 }
 
-p, 
-pre, 
-blockquote, 
-ul, 
-ol, 
+p,
+pre,
+blockquote,
+ul,
+ol,
 table {
-    margin-top: 0;
-    margin-bottom: 1.2777778rem; /* todo: set to line height */
+    @include margin-top(0);
 }
 
 p {

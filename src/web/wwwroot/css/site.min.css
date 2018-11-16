@@ -145,8 +145,10 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 1.2777778rem;
-  margin-bottom: 2.5555556rem;
+  margin-top: 46.8px;
+  margin-top: 2.6rem;
+  margin-bottom: 11.7px;
+  margin-bottom: .65rem;
   letter-spacing: -.03em
 }
 h2, .h2
@@ -155,8 +157,10 @@ h2, .h2
   font-size: 1.9994rem;
   line-height: 46.8px;
   line-height: 2.6rem;
-  margin-top: 1.2777778rem;
-  margin-bottom: 1.2777778rem
+  margin-top: 35.1px;
+  margin-top: 1.95rem;
+  margin-bottom: 11.7px;
+  margin-bottom: .65rem
 }
 h3, .h3, h4, .h4
 {
@@ -164,7 +168,7 @@ h3, .h3, h4, .h4
   font-size: 1.414rem;
   line-height: 46.8px;
   line-height: 2.6rem;
-  margin-top: 1.2777778rem;
+  margin-bottom: 0;
   margin-bottom: 0
 }
 h5, .h5, h6, .h6
@@ -173,8 +177,18 @@ h5, .h5, h6, .h6
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
-  margin-top: 1.2777778rem;
+  margin-bottom: 0;
   margin-bottom: 0
+}
+h1+*
+{
+  margin-top: 0;
+  margin-top: 0
+}
+ul, ol
+{
+  list-style-position: outside;
+  padding-left: 0
 }
 ul ul, ol ol, ul ol, ol ul
 {
@@ -234,11 +248,7 @@ abbr.smallcaps
 @charset "UTF-8";
 html, .root
 {
-  box-sizing: border-box;
-  font-size: 18px;
-  font-size: 1rem;
-  line-height: 23.4px;
-  line-height: 1.3rem
+  box-sizing: border-box
 }
 *, *::before, *::after
 {
@@ -251,6 +261,10 @@ body, .article
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
+  margin-top: 23.4px;
+  margin-top: 1.3rem;
+  margin-bottom: 23.4px;
+  margin-bottom: 1.3rem;
   font-variant-ligatures: common-ligatures;
   font-variant-numeric: oldstyle-nums
 }
@@ -261,7 +275,7 @@ article p:first-of-type::first-line
 p, pre, blockquote, ul, ol, table
 {
   margin-top: 0;
-  margin-bottom: 1.2777778rem
+  margin-top: 0
 }
 p
 {
@@ -599,8 +613,10 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 1.2777778rem;
-  margin-bottom: 2.5555556rem;
+  margin-top: 46.8px;
+  margin-top: 2.6rem;
+  margin-bottom: 11.7px;
+  margin-bottom: .65rem;
   letter-spacing: -.03em
 }
 h2, .h2
@@ -609,8 +625,10 @@ h2, .h2
   font-size: 1.9994rem;
   line-height: 46.8px;
   line-height: 2.6rem;
-  margin-top: 1.2777778rem;
-  margin-bottom: 1.2777778rem
+  margin-top: 35.1px;
+  margin-top: 1.95rem;
+  margin-bottom: 11.7px;
+  margin-bottom: .65rem
 }
 h3, .h3, h4, .h4
 {
@@ -618,7 +636,7 @@ h3, .h3, h4, .h4
   font-size: 1.414rem;
   line-height: 46.8px;
   line-height: 2.6rem;
-  margin-top: 1.2777778rem;
+  margin-bottom: 0;
   margin-bottom: 0
 }
 h5, .h5, h6, .h6
@@ -627,8 +645,18 @@ h5, .h5, h6, .h6
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
-  margin-top: 1.2777778rem;
+  margin-bottom: 0;
   margin-bottom: 0
+}
+h1+*
+{
+  margin-top: 0;
+  margin-top: 0
+}
+ul, ol
+{
+  list-style-position: outside;
+  padding-left: 0
 }
 ul ul, ol ol, ul ol, ol ul
 {
@@ -688,11 +716,7 @@ abbr.smallcaps
 @charset "UTF-8";
 html, .root
 {
-  box-sizing: border-box;
-  font-size: 18px;
-  font-size: 1rem;
-  line-height: 23.4px;
-  line-height: 1.3rem
+  box-sizing: border-box
 }
 *, *::before, *::after
 {
@@ -705,6 +729,10 @@ body, .article
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
+  margin-top: 23.4px;
+  margin-top: 1.3rem;
+  margin-bottom: 23.4px;
+  margin-bottom: 1.3rem;
   font-variant-ligatures: common-ligatures;
   font-variant-numeric: oldstyle-nums
 }
@@ -715,7 +743,7 @@ article p:first-of-type::first-line
 p, pre, blockquote, ul, ol, table
 {
   margin-top: 0;
-  margin-bottom: 1.2777778rem
+  margin-top: 0
 }
 p
 {

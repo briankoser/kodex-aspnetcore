@@ -2,6 +2,7 @@
 $mobile-font-size-small-scale: 0.889;
 $mobile-line-height: 1.3;
 $mobile-scale: 1.414; /* 1:√2 – Augmented fourth / Diminished fifth */
+$mobile-leading: $mobile-font-size * $mobile-line-height;
 
 /*
 $root: ( fontSize: 18px, lineHeight: 23px );

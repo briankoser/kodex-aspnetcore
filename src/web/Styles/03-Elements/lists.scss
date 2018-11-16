@@ -1,4 +1,10 @@
 ﻿/* ul, ol, li, dl, dt, dd, menu, menuitem */
+ul, 
+ol {
+    list-style-position: outside;
+    padding-left: 0;
+}
+
 ul ul,
 ol ol,
 ul ol,
