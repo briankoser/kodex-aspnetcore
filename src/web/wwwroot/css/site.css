@@ -316,8 +316,8 @@ h1, .h1 {
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 58.5px;
-  margin-top: 3.25rem;
+  margin-top: 35.1px;
+  margin-top: 1.95rem;
   margin-bottom: 11.7px;
   margin-bottom: 0.65rem;
   letter-spacing: -0.03em; }
@@ -351,6 +351,10 @@ h6, .h6 {
   margin-bottom: 0rem; }
 
 h1 + * {
+  margin-top: 0px;
+  margin-top: 0rem; }
+
+main > h1 {
   margin-top: 0px;
   margin-top: 0rem; }
 
@@ -514,8 +518,6 @@ body, .article {
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
-  margin-top: 23.4px;
-  margin-top: 1.3rem;
   margin-bottom: 23.4px;
   margin-bottom: 1.3rem;
   font-variant-ligatures: common-ligatures;
@@ -642,9 +644,7 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
 .site-footer {
   display: flex;
   align-items: center;
-  background-color: black;
-  height: 10vw;
-  margin-top: 2rem; }
+  background-color: black; }
   .site-footer .footer-nav {
     display: flex;
     flex-basis: 90%;
@@ -655,6 +655,36 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
     list-style-type: none; }
   .site-footer .cc-logo {
     flex-basis: 10%; }
+
+@charset "UTF-8";
+/* 1:√2 – Augmented fourth / Diminished fifth */
+/*
+$root: ( fontSize: 18px, lineHeight: 23px );
+$scale0: ( fontSize: 1rem, line: 1.2777778rem
+$scale1: ( fontSize: 1.3888889rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale2: ( fontSize: 2rem, line: 1.2777778rem, autoLineCount: 2, autoLineHeight: 2.5555556rem );
+$scale3: ( fontSize: 2.8333333rem, line: 1.2777778rem, autoLineCount: 3, autoLineHeight: 3.8333333rem );
+$scale4: ( fontSize: 4rem, line: 1.2777778rem, autoLineCount: 4, autoLineHeight: 5.1111111rem );
+$scale5: ( fontSize: 5.6666667rem, line: 1.2777778rem, autoLineCount: 5, autoLineHeight: 6.3888889rem );
+$scale6: ( fontSize: 8rem, line: 1.2777778rem, autoLineCount: 7, autoLineHeight: 8.9444444rem );
+$scale7: ( fontSize: 11.2777778rem, line: 1.2777778rem, autoLineCount: 9, autoLineHeight: 11.5rem );
+$scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeight: 16.6111111rem );*/
+body {
+  display: grid;
+  grid-template-rows: 12vh 1fr 12vh;
+  grid-template-columns: 0.5rem 1fr 0.5rem;
+  grid-template-areas: "header      header header"  "gutter-left main   gutter-right"  "footer      footer footer";
+  grid-row-gap: 23.4px;
+  row-gap: 1.3rem; }
+
+.site-header {
+  grid-area: header; }
+
+.body-content {
+  grid-area: main; }
+
+.site-footer {
+  grid-area: footer; }
 
 .site-header {
   display: flex;

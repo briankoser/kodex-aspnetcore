@@ -1,0 +1,25 @@
+﻿@import '../01-Base/variables.scss';
+
+body {
+    display: grid;
+    grid-template-rows: 12vh 1fr 12vh;
+    grid-template-columns: 0.5rem 1fr 0.5rem;
+    grid-template-areas: 
+        "header      header header" 
+        "gutter-left main   gutter-right" 
+        "footer      footer footer";
+    grid-row-gap: #{ $mobile-leading + 'px'};
+         row-gap: #{ $mobile-line-height + 'rem'};
+}
+
+.site-header {
+    grid-area: header;
+}
+
+.body-content {
+    grid-area: main;
+}
+
+.site-footer {
+    grid-area: footer;
+}

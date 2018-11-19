@@ -33,9 +33,7 @@ $scale8: ( fontSize: 16rem, line: 1.2777778rem, autoLineCount: 13, autoLineHeigh
 .site-footer {
   display: flex;
   align-items: center;
-  background-color: black;
-  height: 10vw;
-  margin-top: 2rem; }
+  background-color: black; }
   .site-footer .footer-nav {
     display: flex;
     flex-basis: 90%;

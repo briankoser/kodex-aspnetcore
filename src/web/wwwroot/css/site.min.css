@@ -150,8 +150,8 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 58.5px;
-  margin-top: 3.25rem;
+  margin-top: 35.1px;
+  margin-top: 1.95rem;
   margin-bottom: 11.7px;
   margin-bottom: .65rem;
   letter-spacing: -.03em
@@ -186,6 +186,11 @@ h5, .h5, h6, .h6
   margin-bottom: 0
 }
 h1+*
+{
+  margin-top: 0;
+  margin-top: 0
+}
+main>h1
 {
   margin-top: 0;
   margin-top: 0
@@ -271,8 +276,6 @@ body, .article
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
-  margin-top: 23.4px;
-  margin-top: 1.3rem;
   margin-bottom: 23.4px;
   margin-bottom: 1.3rem;
   font-variant-ligatures: common-ligatures;
@@ -382,9 +385,7 @@ th.oblique-heading
 {
   display: flex;
   align-items: center;
-  background-color: #000;
-  height: 10vw;
-  margin-top: 2rem
+  background-color: #000
 }
 .site-footer .footer-nav
 {
@@ -401,6 +402,28 @@ th.oblique-heading
 .site-footer .cc-logo
 {
   flex-basis: 10%
+}
+@charset "UTF-8";
+body
+{
+  display: grid;
+  grid-template-rows: 12vh 1fr 12vh;
+  grid-template-columns: .5rem 1fr .5rem;
+  grid-template-areas: "header      header header" "gutter-left main   gutter-right" "footer      footer footer";
+  grid-row-gap: 23.4px;
+  row-gap: 1.3rem
+}
+.site-header
+{
+  grid-area: header
+}
+.body-content
+{
+  grid-area: main
+}
+.site-footer
+{
+  grid-area: footer
 }
 .site-header
 {
@@ -628,8 +651,8 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 58.5px;
-  margin-top: 3.25rem;
+  margin-top: 35.1px;
+  margin-top: 1.95rem;
   margin-bottom: 11.7px;
   margin-bottom: .65rem;
   letter-spacing: -.03em
@@ -664,6 +687,11 @@ h5, .h5, h6, .h6
   margin-bottom: 0
 }
 h1+*
+{
+  margin-top: 0;
+  margin-top: 0
+}
+main>h1
 {
   margin-top: 0;
   margin-top: 0
@@ -749,8 +777,6 @@ body, .article
   font-size: 1rem;
   line-height: 23.4px;
   line-height: 1.3rem;
-  margin-top: 23.4px;
-  margin-top: 1.3rem;
   margin-bottom: 23.4px;
   margin-bottom: 1.3rem;
   font-variant-ligatures: common-ligatures;
@@ -860,9 +886,7 @@ th.oblique-heading
 {
   display: flex;
   align-items: center;
-  background-color: #000;
-  height: 10vw;
-  margin-top: 2rem
+  background-color: #000
 }
 .site-footer .footer-nav
 {
@@ -879,6 +903,28 @@ th.oblique-heading
 .site-footer .cc-logo
 {
   flex-basis: 10%
+}
+@charset "UTF-8";
+body
+{
+  display: grid;
+  grid-template-rows: 12vh 1fr 12vh;
+  grid-template-columns: .5rem 1fr .5rem;
+  grid-template-areas: "header      header header" "gutter-left main   gutter-right" "footer      footer footer";
+  grid-row-gap: 23.4px;
+  row-gap: 1.3rem
+}
+.site-header
+{
+  grid-area: header
+}
+.body-content
+{
+  grid-area: main
+}
+.site-footer
+{
+  grid-area: footer
 }
 .site-header
 {

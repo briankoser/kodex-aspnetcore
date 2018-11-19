@@ -19,7 +19,7 @@ h4, .h4 {
 h1, .h1 {
     @include font-size(3);
     @include line-height(3);
-    @include margin-top(2.5);
+    @include margin-top(1.5);
     @include margin-bottom(0.5);
     letter-spacing: -0.03em;
 }
@@ -46,5 +46,9 @@ h6, .h6 {
 }
 
 h1 + * {
+    @include margin-top(0);
+}
+
+main > h1 {
     @include margin-top(0);
 }
