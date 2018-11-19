@@ -1,7 +1,0 @@
-/* hr */
-hr {
-  height: 1em;
-  border: 0;
-  background: url(fleuron.svg) center no-repeat;
-  /* todo: get image */
-  background-size: contain; }
