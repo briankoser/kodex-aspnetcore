@@ -42,3 +42,38 @@
     font-family: FiraMono;
     src: url('/fonts/FiraMono.woff2') format('woff2'), url('/fonts/FiraMono.woff') format('woff');
 }
+
+@font-face {
+    font-family: OpenSansNumero;
+    src: url('/fonts/OpenSansRegularNumero.woff2') format('woff2'), url('/fonts/OpenSansRegularNumero.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSansNumero;
+    src: url('/fonts/OpenSansBoldNumero.woff2') format('woff2'), url('/fonts/OpenSansBoldNumero.woff') format('woff');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: OpenSansNumero;
+    src: url('/fonts/OpenSansItalicNumero.woff2') format('woff2'), url('/fonts/OpenSansItalicNumero.woff') format('woff');
+    font-style: italic;
+}
+
+@font-face {
+    font-family: OpenSansNumero;
+    src: url('/fonts/OpenSansBoldItalicNumero.woff2') format('woff2'), url('/fonts/OpenSansBoldItalicNumero.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: OpenSansLightNumero;
+    src: url('/fonts/OpenSansLightNumero.woff2') format('woff2'), url('/fonts/OpenSansLightNumero.woff') format('woff');
+}
+
+@font-face {
+    font-family: OpenSansLightNumero;
+    src: url('/fonts/OpenSansLightItalicNumero.woff2') format('woff2'), url('/fonts/OpenSansLightItalicNumero.woff') format('woff');
+    font-style: italic;
+}
