@@ -73,3 +73,7 @@ abbr.smallcaps {
   /* todo: correct font? */
   text-transform: lowercase;
   /* todo: or uppercase? */ }
+
+code {
+  font-family: FiraMono, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: 14px; }

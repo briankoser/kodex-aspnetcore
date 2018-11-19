@@ -30,3 +30,7 @@
   src: url("/fonts/concourse/concourse_t4_bold_italic.woff2") format("woff2"), url("/fonts/concourse/concourse_t4_bold_italic.woff") format("woff");
   font-weight: 700;
   font-style: italic; }
+
+@font-face {
+  font-family: FiraMono;
+  src: url("/fonts/FiraMono.woff2") format("woff2"), url("/fonts/FiraMono.woff") format("woff"); }

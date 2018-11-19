@@ -37,3 +37,8 @@
     font-weight: 700;
     font-style: italic;
 }
+
+@font-face {
+    font-family: FiraMono;
+    src: url('/fonts/FiraMono.woff2') format('woff2'), url('/fonts/FiraMono.woff') format('woff');
+}

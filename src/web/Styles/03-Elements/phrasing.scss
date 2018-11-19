@@ -52,3 +52,7 @@ abbr.smallcaps {
     font-family: 'Concourse C4'; /* todo: correct font? */
     text-transform: lowercase; /* todo: or uppercase? */
 }
+
+code {
+    @include monospace-font();
+}

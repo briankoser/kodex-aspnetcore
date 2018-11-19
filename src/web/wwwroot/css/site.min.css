@@ -38,6 +38,11 @@
   font-weight: 700;
   font-style: italic
 }
+@font-face
+{
+  font-family: FiraMono;
+  src: url("/fonts/FiraMono.woff2") format("woff2"),url("/fonts/FiraMono.woff") format("woff")
+}
 @charset "UTF-8";
 @charset "UTF-8";
 @charset "UTF-8";
@@ -145,8 +150,8 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 46.8px;
-  margin-top: 2.6rem;
+  margin-top: 58.5px;
+  margin-top: 3.25rem;
   margin-bottom: 11.7px;
   margin-bottom: .65rem;
   letter-spacing: -.03em
@@ -244,6 +249,11 @@ abbr.smallcaps
 {
   font-family: 'Concourse C4';
   text-transform: lowercase
+}
+code
+{
+  font-family: FiraMono,SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;
+  font-size: 14px
 }
 @charset "UTF-8";
 html, .root
@@ -506,6 +516,11 @@ th.oblique-heading
   font-weight: 700;
   font-style: italic
 }
+@font-face
+{
+  font-family: FiraMono;
+  src: url("/fonts/FiraMono.woff2") format("woff2"),url("/fonts/FiraMono.woff") format("woff")
+}
 @charset "UTF-8";
 @charset "UTF-8";
 @charset "UTF-8";
@@ -613,8 +628,8 @@ h1, .h1
   font-size: 2.82715rem;
   line-height: 70.2px;
   line-height: 3.9rem;
-  margin-top: 46.8px;
-  margin-top: 2.6rem;
+  margin-top: 58.5px;
+  margin-top: 3.25rem;
   margin-bottom: 11.7px;
   margin-bottom: .65rem;
   letter-spacing: -.03em
@@ -712,6 +727,11 @@ abbr.smallcaps
 {
   font-family: 'Concourse C4';
   text-transform: lowercase
+}
+code
+{
+  font-family: FiraMono,SFMono-Regular,Consolas,'Liberation Mono',Menlo,Courier,monospace;
+  font-size: 14px
 }
 @charset "UTF-8";
 html, .root

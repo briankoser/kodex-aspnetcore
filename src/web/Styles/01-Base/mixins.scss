@@ -1,6 +1,11 @@
 ﻿@import "variables.scss";
 @import "functions.scss";
 
+@mixin monospace-font() {
+    font-family: FiraMono, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 14px;
+}
+
 @mixin font-size($number) {
     font-size: #{ calcFontSizePx($mobile-font-size, $mobile-scale, $number) + 'px'};
     font-size: #{ calcFontSizeRem($mobile-scale, $number) + 'rem'};
