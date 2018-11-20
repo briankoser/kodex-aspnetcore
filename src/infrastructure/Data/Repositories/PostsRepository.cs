@@ -11,33 +11,10 @@ namespace kodex.Infrastructure.Data.DBAccess
 {
     public class PostsRepository : SqlRepository, IPostsRepository
     {
-        //private readonly IConfiguration _configuration;
-
         public PostsRepository(ISqlDataSourceConfig config, ILogger<PostsRepository> logger)
             : base(config.SqlServerConnectionString, logger)
         {
         }
-
-        //public IDbConnection Connection
-        //{
-        //    get
-        //    {
-        //        // todo: store in secrets.json, etc
-        //        return new SqlConnection("Server=70.32.29.130;Database=kodexdb;User ID=koserus_kodex;Password=Rd\\_yGRXgke*Ys+mua2s|d1Lg_P|Fm0e;MultipleActiveResultSets=true"); //_configuration.GetConnectionString("KodexDB"));
-        //    }
-        //}
-
-        //public async Task<Post> GetByID(int id)
-        //{
-        //    //todo: abstract data access library over dapper
-        //    using (IDbConnection conn = Connection)
-        //    {
-        //        string query = "SELECT * FROM dbo.Posts WHERE ID = @ID";
-        //        conn.Open();
-        //        var result = await conn.QueryFirstOrDefaultAsync<Post>(query, new { ID = id });
-        //        return result;
-        //    }
-        //}
 
         public Task<Post> GetByID(int id)
         {
@@ -45,29 +22,22 @@ namespace kodex.Infrastructure.Data.DBAccess
             return QueryFirstOrDefaultAsync<Post>(query, new { ID = id });
         }
 
-        //public async Task<List<Post>> GetByOptions(IPostOptions options)
-        //{
-        //    using (IDbConnection conn = Connection)
-        //    {
-        //        string query = @"SELECT * 
-        //                         FROM dbo.Posts 
-        //                         WHERE (datepublished >= @StartDate OR @StartDate IS NULL);";
-        //        conn.Open();
-        //        var result = (await conn.QueryAsync<Post, PostType, Author, Post>(
-        //            query,
-        //            (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
-        //            param: new { options.StartDate },
-        //            splitOn: "PostTypeID,AuthorIDs"));
-
-        //        return result.ToList();
-        //    }
-        //}
+        public Task<Post> GetByUrl(int year, int month, int day, int datePublishedID)
+        {
+            string query = @"SELECT * 
+                               FROM dbo.Posts 
+                              WHERE year(datepublished) = @Year
+                                AND month(datepublished) = @Month
+                                AND day(datepublished) = @Day
+                                AND datepublishedid = @DatePublishedID;";
+            return QueryFirstOrDefaultAsync<Post>(query, new { Year = year, Month = month, Day = day, DatePublishedID = datePublishedID });
+        }
 
         public async Task<List<Post>> GetByOptions(IPostOptions options)
         {
             string query = @"SELECT * 
-                                FROM dbo.Posts 
-                               WHERE (datepublished >= @StartDate OR @StartDate IS NULL);";
+                               FROM dbo.Posts 
+                              WHERE (datepublished >= @StartDate OR @StartDate IS NULL);";
             return (await QueryAsync<Post, PostType, Author, Post>(
                 query,
                 (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
