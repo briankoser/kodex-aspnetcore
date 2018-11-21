@@ -28,7 +28,7 @@
     $font-size: calcFontSizeRem($scale, $number);
 
     @while $line-height < $font-size {
-        $line-height: $line-height + $mobile-line-height;
+        $line-height: $line-height + ($mobile-line-height * 0.5);
     }
     
     @return $line-height;

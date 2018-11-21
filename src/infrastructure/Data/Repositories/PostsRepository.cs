@@ -22,26 +22,33 @@ namespace kodex.Infrastructure.Data.DBAccess
             return QueryFirstOrDefaultAsync<Post>(query, new { ID = id });
         }
 
-        public Task<Post> GetByUrl(int year, int month, int day, int datePublishedID)
+        public async Task<Post> GetByUrl(int year, int month, int day, int datePublishedID)
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
                               WHERE year(datepublished) = @Year
                                 AND month(datepublished) = @Month
                                 AND day(datepublished) = @Day
-                                AND datepublishedid = @DatePublishedID;";
-            return QueryFirstOrDefaultAsync<Post>(query, new { Year = year, Month = month, Day = day, DatePublishedID = datePublishedID });
+                                AND datepublishedid = @DatePublishedID
+                                AND ispublic = 1;";
+            return (await QueryAsync<Post, PostType, Author, Post>(
+                query,
+                (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
+                parameters: new { Year = year, Month = month, Day = day, DatePublishedID = datePublishedID },
+                splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
 
         public async Task<List<Post>> GetByOptions(IPostOptions options)
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
-                              WHERE (datepublished >= @StartDate OR @StartDate IS NULL);";
+                              WHERE (datepublished >= @StartDate OR @StartDate IS NULL)
+                                AND ispublic = 1
+                              ORDER BY datepublished DESC;";
             return (await QueryAsync<Post, PostType, Author, Post>(
                 query,
                 (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
-                param: new { options.StartDate },
+                parameters: new { options.StartDate },
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
     }

@@ -2,7 +2,23 @@
 @model Web.Pages.PostModel
 @{
     ViewData["Title"] = "Post";
-    Layout = "~/Pages/_Layout.cshtml";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>@Model.Post.Title</h1>
+<article class="article">
+    <header>
+        <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
+        <span class="post-author">@Html.DisplayFor(modelItem => Model.Post.Author.ShortName)</span> ·
+        <span class="post-date">@Html.DisplayFor(modelItem => Model.Post.DatePublished)</span> 
+        <span class="post-update-date">@Html.DisplayFor(modelItem => Model.Post.DateLastUpdatedMessage)</span>
+    </header>
+    
+    @if (!String.IsNullOrEmpty(Model.Post.ImageUrl))
+    {
+        <img src="@Model.Post.ImageUrl" class="article-header-image" />
+    }
+    
+    <div class="article-body">
+        @Html.Raw(Model.Post.Body)
+    </div>
+</article>

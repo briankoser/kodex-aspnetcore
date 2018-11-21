@@ -18,7 +18,7 @@ h4, .h4 {
 
 h1, .h1 {
     @include font-size(3);
-    @include line-height(3);
+    @include line-height(2);
     @include margin-top(1.5);
     @include margin-bottom(0.5);
     letter-spacing: -0.03em;

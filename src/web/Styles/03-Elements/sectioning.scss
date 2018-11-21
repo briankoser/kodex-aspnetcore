@@ -14,7 +14,7 @@ html, .root {
     box-sizing: inherit;
 }
 
-body, .article {
+body, .body {
     /**
      * Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
      */
@@ -26,10 +26,6 @@ body, .article {
     font-variant-numeric: oldstyle-nums;
     /*max-width: 560px;
     margin: auto;*/
-}
-
-article p:first-of-type::first-line {
-    font-variant-caps: small-caps;
 }
 
 p,
