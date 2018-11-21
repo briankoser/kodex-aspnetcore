@@ -1,9 +1,6 @@
-﻿@page
+﻿@page "/{author}"
 @model PostsPageModel
-@{
-    ViewData["Title"] = "All";
-}
-<h1>@ViewData["Title"]</h1>
+<h1>Articles by @Model.Title</h1>
 
 @if (Model.Posts == null)
 {
