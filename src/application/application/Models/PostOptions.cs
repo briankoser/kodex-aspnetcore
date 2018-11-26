@@ -8,6 +8,7 @@ namespace kodex.Application.Models
     public class PostOptions : IPostOptions
     {
         public string Author { get; set; }
+        public string Category { get; set; }
         public DateTime? StartDate { get; set; }
     }
 }

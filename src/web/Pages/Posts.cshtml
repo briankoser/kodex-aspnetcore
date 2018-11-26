@@ -1,10 +1,10 @@
-﻿@page "/{author}"
+﻿@page "/{author}/{category:alpha?}/{year:int?}/{month:int?}/{day:int?}"
 @model PostsPageModel
-<h1>Articles by @Model.Title</h1>
+<h1>@Model.Title</h1>
 
-@if (Model.Posts == null)
+@if (Model.Posts == null || Model.Posts.Count == 0)
 {
-    @("No posts found")
+    @("Nothing found")
 }
 else
 {

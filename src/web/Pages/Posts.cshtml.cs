@@ -22,15 +22,18 @@ namespace kodex.Pages
             _postsRepository = postsRepository;
         }
 
-        public async Task OnGetAsync(string author)
+        public async Task OnGetAsync(string author, string category)
         {
+            string categoryString = String.IsNullOrEmpty(category) ? "all" : category;
+
             options = new PostOptions()
             {
                 Author = author,
+                Category = categoryString,
                 StartDate = null
             };
 
-            Title = ToTitleCase(author);
+            Title = $"{ToTitleCase(categoryString)} by {ToTitleCase(author)}";
             Posts = await _postsRepository.GetByOptions(options);
         }
 
