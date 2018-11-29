@@ -8,6 +8,9 @@ namespace kodex.Application.Interfaces
     {
         string Author { get; set; }
         string Category { get; set; }
+        int? Year { get; set; }
+        int? Month { get; set; }
+        int? Day { get; set; }
         DateTime? StartDate { get; set; }
     }
 }

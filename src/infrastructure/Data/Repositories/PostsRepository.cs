@@ -43,14 +43,17 @@ namespace kodex.Infrastructure.Data.DBAccess
             string query = @"SELECT * 
                                FROM dbo.Posts 
                               WHERE (datepublished >= @StartDate OR @StartDate IS NULL)
+                                AND (posttypeurl = @Category OR @Category = 'all')
+                                AND (YEAR(datepublished) = @Year OR @Year IS NULL)
+                                AND (MONTH(datepublished) = @Month OR @Month IS NULL)
+                                AND (DAY(datepublished) = @Day OR @Day IS NULL)
                                 AND (lower(shortname) LIKE '%' + @Author + '%' OR @Author = 'all')
-                                AND posttypeurl = @Category OR @Category = 'all'
                                 AND ispublic = 1
                               ORDER BY datepublished DESC;";
             return (await QueryAsync<Post, PostType, Author, Post>(
                 query,
                 (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
-                parameters: new { options.StartDate, options.Author, options.Category },
+                parameters: new { options.StartDate, options.Category, options.Year, options.Month, options.Day, options.Author, },
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
     }

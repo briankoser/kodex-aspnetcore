@@ -22,19 +22,24 @@ namespace kodex.Pages
             _postsRepository = postsRepository;
         }
 
-        public async Task OnGetAsync(string author, string category)
+        public async Task OnGetAsync(string author, string category, int? year, int? month, int? day)
         {
             string categoryString = String.IsNullOrEmpty(category) ? "all" : category;
-
+            
             options = new PostOptions()
             {
                 Author = author,
                 Category = categoryString,
+                Year = year,
+                Month = month,
+                Day = day,
                 StartDate = null
             };
 
-            Title = $"{ToTitleCase(categoryString)} by {ToTitleCase(author)}";
+            Title = $"{ToTitleCase(categoryString)} by {ToTitleCase(author)} ({year}-{month}-{day})";
             Posts = await _postsRepository.GetByOptions(options);
+
+            ViewData["Title"] = Title;
         }
 
         private string ToTitleCase(string s)
