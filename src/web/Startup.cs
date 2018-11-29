@@ -31,6 +31,9 @@ namespace kodex
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}/{year:int}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}/{year:int}/{month:int}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}/{year:int}/{month:int}/{day:int}");
+                    options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}");
+                    options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}");
+                    options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}/{day:int}");
                 });
         }
 
