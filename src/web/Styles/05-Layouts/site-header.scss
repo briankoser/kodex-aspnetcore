@@ -19,7 +19,7 @@
     .site-header-block {
         background: black;
         height: $site-nav-height;
-        margin-left: -4vh;
+        margin-left: -8vw;
         width: 100%;
     }
 
@@ -37,10 +37,10 @@
         box-sizing: content-box;
         content: "";
         height: $site-nav-height;
-        left: -12.5vh;
+        left: -26.5vw;
         position: absolute;
         top: -5vh;
-        width: 12.5vh;
+        width: 26.5vw;
     }
 
     .site-header-block nav {
@@ -59,7 +59,7 @@
     .site-header-block .site-title {
         flex-grow: 2;
         font-family: ConcourseBlack;
-        font-size: 16vmin;
+        font-size: 7.5vh;
     }
 
     .site-header-block .footer-nav-link {
