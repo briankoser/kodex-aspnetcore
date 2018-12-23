@@ -1,0 +1,15 @@
+﻿@import "../01-Base/mixins.scss";
+
+.article {
+    h1 {
+        @include margin-top(0);
+    }
+
+    .article-body {
+        @include margin-top(1);
+
+        p:first-of-type::first-line {
+            /*todo: use concourse small caps font: font-variant-caps: small-caps;*/
+        }
+    }
+}

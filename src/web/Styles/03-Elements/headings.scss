@@ -1,1 +1,54 @@
-﻿/* hgroup, h1, h2, h3, h4, h5, h6 */
+﻿@import "../01-Base/mixins.scss";
+
+/* hgroup, h1, h2, h3, h4, h5, h6 */
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    font-variant-numeric: lining-nums;
+}
+
+h1, .h1,
+h2, .h2,
+h4, .h4 {
+    font-family: ConcourseLight, OpenSansLightNumero, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+h1, .h1 {
+    @include font-size(3);
+    @include line-height(2);
+    @include margin-top(2);
+    @include margin-bottom(1);
+    letter-spacing: -0.03em;
+}
+
+h2, .h2 {
+    @include font-size(2);
+    @include line-height(2);
+    @include margin-top(2);
+    @include margin-bottom(1);
+}
+
+h3, .h3,
+h4, .h4 {
+    @include font-size(1);
+    @include line-height(1);
+    @include margin-bottom(0);
+}
+
+h5, .h5,
+h6, .h6 {
+    @include font-size(0);
+    @include line-height(0);
+    @include margin-bottom(0);
+}
+
+h1 + * {
+    @include margin-top(0);
+}
+
+main > h1 {
+    @include margin-top(0);
+}

@@ -1,3 +1,58 @@
-﻿/* a, strong, em, b, i, u, s, sup, sub, small, abbr, dfn, mark, del, ins, q, 
+﻿@import "../01-Base/mixins.scss";
+
+/* a, strong, em, b, i, u, s, sup, sub, small, abbr, dfn, mark, del, ins, q, 
   cite, data, progress, time, meter, code, var, samp, kbd, keygen, bdi, bdo, 
   ruby, rt, rp, span */
+a,
+strong, 
+em,
+b,
+i, 
+small, 
+code {
+    line-height: 0;
+}
+
+/* todo: https://codepen.io/ghepting/pen/tLnHK/ */
+a {
+    color: black;
+}
+
+/* todo: practical typography p123  */
+sup,
+sub {
+    @include font-size(-1);
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+small {
+    @include font-size(-1);
+    @include line-height(-1);
+}
+
+abbr,
+.proper-name {
+        -ms-hyphens: manual;
+    -webkit-hyphens: manual;
+            hyphens: manual;
+}
+
+/* don't use in title-case headings */
+abbr.smallcaps {
+    font-family: 'Concourse C4'; /* todo: correct font? */
+    text-transform: lowercase; /* todo: or uppercase? */
+}
+
+code {
+    @include monospace-font();
+}

@@ -1,10 +1,19 @@
-﻿.site-footer {
+﻿@import '../01-Base/mixins.scss';
+
+.site-footer {
+    @extend %light-text;
+
+    display: flex;
+    align-items: center;
     background-color: black;
-    color: white;
-    margin-top: 2rem;
 
     .footer-nav {
+        display: flex;
+        flex-basis: 90%;
+        justify-content: space-around;
+        justify-content: space-evenly;
         padding-left: 0;
+        margin-bottom: 0;
     }
 
     .footer-nav li {
@@ -12,6 +21,6 @@
     }
 
     .cc-logo {
-        height: 10vw;
+        flex-basis: 10%;
     }
 }

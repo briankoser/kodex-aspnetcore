@@ -102,9 +102,8 @@ namespace kodex.Infrastructure.Data.Repositories
         protected Task<IEnumerable<T>> QueryAsync<T>(string sql, object parameters = null) =>
             WithConnection(conn => conn.QueryAsync<T>(sql, parameters));
 
-        protected Task<IEnumerable<T1>> QueryAsync<T2, T3, T4, T1>(string sql, Func<T2, T3, T4, T1> map,
-            object param = null, IDbTransaction transaction = null, string splitOn = "Id") =>
-            WithConnection(conn => conn.QueryAsync<T2, T3, T4, T1>(sql, map, param, transaction: transaction, splitOn: splitOn));
+        protected Task<IEnumerable<T1>> QueryAsync<T2, T3, T4, T1>(string sql, Func<T2, T3, T4, T1> map, object parameters = null, IDbTransaction transaction = null, string splitOn = "Id") =>
+            WithConnection(conn => conn.QueryAsync<T2, T3, T4, T1>(sql, map, parameters, transaction: transaction, splitOn: splitOn));
 
         /// <summary>
         ///     Wrap the async Dapper call with default connection setup, disposal, and exception handling.

@@ -1,13 +1,10 @@
-﻿@page
+﻿@page "/{author}"
 @model PostsPageModel
-@{
-    ViewData["Title"] = "All";
-}
-<h1>@ViewData["Title"]</h1>
+<h1>@Model.Title</h1>
 
-@if (Model.Posts == null)
+@if (Model.Posts == null || Model.Posts.Count == 0)
 {
-    @("No posts found")
+    @("Nothing found")
 }
 else
 {
@@ -15,7 +12,7 @@ else
     {
         <article>
             <header>
-                <h2><a href="@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
+                <h2><a href="/@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
                 <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
                 <span class="post-author">@Html.DisplayFor(modelItem => post.Author.ShortName)</span> ·
                 <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>

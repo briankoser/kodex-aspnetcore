@@ -328,3 +328,11 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# Commercial fonts
+src/web/wwwroot/fonts/concourse
+
+# Generated CSS and JS
+src/web/wwwroot/css/
+src/web/wwwroot/js/*.min.js
+src/web/wwwroot/js/*.min.js.map
