@@ -1,68 +1,42 @@
 ﻿.site-header {
-    $logo-size: 10vh;
     $site-nav-height: 12vh;
 
     display: flex;
     align-items: center;
 
     .site-logo-link {
-        height: $logo-size;
         margin-left: 0.5em;
-        z-index: 1;
     }
 
     .site-logo {
-        height: $logo-size;
-        width: $logo-size;
+        height: $site-nav-height;
     }
 
     .site-header-block {
         background: black;
         height: $site-nav-height;
-        margin-left: -8vw;
         width: 100%;
-    }
 
-    .site-header-circle {
-        background-color: white;
-        height: $site-nav-height;
-        overflow: hidden;
-        position: absolute;
-        width: 11vw;
-    }
+        nav {
+            color: white;
+            height: 100%;
+            margin-left: 1vw;
+            display: flex;
+            align-items: center;
+        }
 
-    .site-header-circle:after {
-        border: 5vh solid black;
-        border-radius: 11vh;
-        box-sizing: content-box;
-        content: "";
-        height: $site-nav-height;
-        left: -26.5vw;
-        position: absolute;
-        top: -5vh;
-        width: 26.5vw;
-    }
+        a {
+            color: white;
+        }
 
-    .site-header-block nav {
-        color: white;
-        height: 100%;
-        margin-left: 9vw;
-        padding-left: 9vw;
-        display: flex;
-        align-items: center;
-    }
+        .site-title {
+            flex-grow: 2;
+            font-family: ConcourseBlack;
+            font-size: 7.5vh;
+        }
 
-    .site-header-block a {
-        color: white;
-    }
-
-    .site-header-block .site-title {
-        flex-grow: 2;
-        font-family: ConcourseBlack;
-        font-size: 7.5vh;
-    }
-
-    .site-header-block .footer-nav-link {
-        flex-grow: 1;
+        .footer-nav-link {
+            flex-grow: 1;
+        }
     }
 }

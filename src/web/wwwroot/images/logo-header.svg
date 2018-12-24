@@ -9,12 +9,12 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="300mm"
+   width="185mm"
    height="148.75555mm"
-   viewBox="0 0 1062.9921 527.0866"
+   viewBox="0 0 655.51162 527.0866"
    id="logo"
    version="1.1"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="logo-header.svg">
   <defs
      id="defs4" />
@@ -25,15 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="823.73963"
-     inkscape:cy="305.85296"
+     inkscape:zoom="0.70710678"
+     inkscape:cx="630.51646"
+     inkscape:cy="333.30462"
      inkscape:document-units="px"
-     inkscape:current-layer="logo"
+     inkscape:current-layer="bar"
      showgrid="false"
-     inkscape:window-width="1458"
-     inkscape:window-height="841"
-     inkscape:window-x="70"
+     inkscape:window-width="1841"
+     inkscape:window-height="1057"
+     inkscape:window-x="71"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      fit-margin-top="1"
@@ -53,10 +53,23 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1"
-     transform="translate(-96.456693,-96.456693)">
+     id="bar"
+     inkscape:label="Bar"
+     style="display:inline">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke-width:1.06666672"
+       d="M 404.73438,-1 A 275.2,300.00001 0 0 1 601.05664,286.2832 275.2,300.00001 0 0 1 428.77734,564.33398 H 700 V -1 Z"
+       transform="scale(0.93749998)"
+       id="rect3370"
+       inkscape:connector-curvature="0" />
+  </g>
+  <g
+     inkscape:label="Icon"
+     inkscape:groupmode="layer"
+     id="icon"
+     transform="translate(-96.456693,-96.456693)"
+     style="display:inline">
     <path
        transform="matrix(0,-1,-1,0,0,0)"
        d="m -100,-350 a 250,250 0 0 1 -249.99999,250 L -350,-350 Z"
@@ -80,9 +93,9 @@
        sodipodi:start="0"
        sodipodi:end="1.5707963"
        d="M -100,370 A 250,250 0 0 1 -349.99999,620 L -350,370 Z"
-       transform="matrix(0,-1,1,0,0,0)" />
+       transform="rotate(-90)" />
     <path
-       transform="matrix(0,1,-1,0,0,0)"
+       transform="rotate(90)"
        d="M 620,-350 A 250,250 0 0 1 370.00001,-100 L 370,-350 Z"
        sodipodi:end="1.5707963"
        sodipodi:start="0"
@@ -106,15 +119,4 @@
        d="M 620,370 A 250,250 0 0 1 370.00001,620 L 370,370 Z"
        transform="matrix(0,1,1,0,0,0)" />
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer2"
-     inkscape:label="navbar" />
-  <rect
-     style="fill:#000000;fill-opacity:1"
-     id="rect3370"
-     width="522"
-     height="530"
-     x="551"
-     y="0" />
 </svg>
