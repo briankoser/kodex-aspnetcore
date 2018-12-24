@@ -23,3 +23,9 @@ body {
 .site-footer {
     grid-area: footer;
 }
+
+@media only screen and (min-width: 1000px) {
+    body {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
