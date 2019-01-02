@@ -23,6 +23,7 @@ namespace Web.Pages
         public async Task OnGetAsync(int year, int month, int day, int datePublishedID)
         {
             Post = await _postsRepository.GetByUrl(year, month, day, datePublishedID);
+            ViewData["Title"] = Post.Title;
         }
     }
 }

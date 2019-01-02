@@ -36,7 +36,7 @@ namespace kodex.Pages
                 StartDate = null
             };
 
-            Title = $"{ToTitleCase(categoryString)} by {ToTitleCase(author)} ({year}-{month}-{day})";
+            Title = $"{ToTitleCase(categoryString)} {GetAuthorString(author)} {GetDateString(year, month, day)}";
             Posts = await _postsRepository.GetByOptions(options);
 
             ViewData["Title"] = Title;
@@ -45,6 +45,28 @@ namespace kodex.Pages
         private string ToTitleCase(string s)
         {
             return new CultureInfo("en-US", false).TextInfo.ToTitleCase(s);
+        }
+
+        private string GetAuthorString(string author)
+        {
+            if (author == "all")
+                return "";
+
+            return $"by {ToTitleCase(author)}";
+        }
+
+        private string GetDateString(int? year, int? month, int? day)
+        {
+            if (year == null)
+                return "";
+
+            if (month == null)
+                return $"({year})";
+
+            if (day == null)
+                return $"({year}-{month})";
+
+            return $"({year}-{month}-{day})";
         }
     }
 }
