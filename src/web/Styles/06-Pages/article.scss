@@ -5,8 +5,26 @@
         @include margin-top(0);
     }
 
+    img {
+        height: auto;
+        max-width: 96vw;
+    }
+
     .article-body {
         @include margin-top(1);
+
+        .iframe-container {
+            position: relative;
+            padding-top: 56%;
+        }
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
 
         p:first-of-type::first-line {
             /*todo: use concourse small caps font: font-variant-caps: small-caps;*/

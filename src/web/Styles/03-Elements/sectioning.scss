@@ -60,6 +60,11 @@ blockquote {
     }
 }
 
+figure {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 figure.scrolling-table {
     overflow-x: scroll;
     max-width: 100%;
