@@ -13,9 +13,11 @@ else
         <article>
             <header>
                 <h2><a href="/@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
-                <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
-                <span class="post-author">@Html.DisplayFor(modelItem => post.Author.ShortName)</span> ·
-                <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
+                <span class="post-header">
+                    <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
+                    <span class="post-author">@Html.DisplayFor(modelItem => post.Author.ShortName)</span> ·
+                    <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
+                </span>
             </header>
         </article>
     }

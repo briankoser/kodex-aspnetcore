@@ -1,0 +1,8 @@
+﻿@import "../01-Base/mixins.scss";
+
+.post-header {
+    .post-date {
+        font-variant-numeric: lining-nums;
+        font-size: @include font-size(-1);
+    }
+}
