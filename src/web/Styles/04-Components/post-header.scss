@@ -3,6 +3,6 @@
 .post-header {
     .post-date {
         font-variant-numeric: lining-nums;
-        font-size: @include font-size(-1);
+        @include font-size(-1);
     }
 }
