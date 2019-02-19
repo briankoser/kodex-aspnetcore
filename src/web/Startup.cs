@@ -1,7 +1,10 @@
 using kodex.Application.Interfaces;
+using kodex.Application.Models;
+using kodex.Application.Stores;
 using kodex.Infrastructure.Data.DBAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +25,9 @@ namespace kodex
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<IPostsRepository, PostsRepository>();
+            services.AddTransient<IIdentityRepository, IdentityRepository>();
+            services.AddTransient<IUserStore<User>, UserStore>();
+            services.AddTransient<IRoleStore<Role>, RoleStore>();
             services.AddTransient<ISqlDataSourceConfig, SqlDataSourceConfig>();
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
@@ -35,6 +41,7 @@ namespace kodex
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}/{day:int}");
                 });
+            services.AddIdentity<User, Role>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +59,7 @@ namespace kodex
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
