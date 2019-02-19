@@ -7,10 +7,12 @@
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="Dapper" Version="1.50.5" />
     <PackageReference Include="Dapper-Async" Version="1.3.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.6" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Areas\Identity\Services\" />
     <Folder Include="Extensions\" />
     <Folder Include="Styles\06-Pages\" />
     <Folder Include="Views\" />
