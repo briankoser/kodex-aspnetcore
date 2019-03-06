@@ -1,7 +1,7 @@
 USE [master]
 GO
 
-/****** Object:  Database [kodexdb]    Script Date: 2/19/2019 10:43:54 AM ******/
+/****** Object:  Database [kodexdb]    Script Date: 3/6/2019 5:10:53 PM ******/
 CREATE DATABASE [kodexdb]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -141,3 +141,4 @@ GO
 
 ALTER DATABASE [kodexdb] SET  READ_WRITE 
 GO
+

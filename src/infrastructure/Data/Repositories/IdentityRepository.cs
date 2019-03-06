@@ -74,64 +74,48 @@ namespace kodex.Infrastructure.Data.DBAccess
             throw new System.NotImplementedException();
         }
 
-        public Task UpdateEmail(User user)
-        {
-            if (String.IsNullOrEmpty(user.Id))
-            {
-                throw new ArgumentNullException("user.Id");
-            }
+        //public Task UpdateEmail(User user)
+        //{
+        //    if (String.IsNullOrEmpty(user.Id))
+        //    {
+        //        throw new ArgumentNullException("user.Id");
+        //    }
 
-            if (String.IsNullOrEmpty(user.Email))
-            {
-                throw new ArgumentNullException("user.Email");
-            }
+        //    if (String.IsNullOrEmpty(user.Email))
+        //    {
+        //        throw new ArgumentNullException("user.Email");
+        //    }
 
-            string storedProcedure = "dbo.sp_UpdateUserEmail";
-            return ExecuteStoredProcedureAsync(storedProcedure, new { id = user.Id, email = user.Email });
-        }
+        //    string storedProcedure = "dbo.sp_UpdateUserEmail";
+        //    return ExecuteStoredProcedureAsync(storedProcedure, new { id = user.Id, email = user.Email });
+        //}
 
-        public Task UpdateNormalizedEmail(User user)
-        {
-            if (String.IsNullOrEmpty(user.Email))
-            {
-                throw new ArgumentNullException("user.Email");
-            }
+        //public Task UpdateNormalizedEmail(User user)
+        //{
+        //    if (String.IsNullOrEmpty(user.Email))
+        //    {
+        //        throw new ArgumentNullException("user.Email");
+        //    }
 
-            string storedProcedure = "dbo.sp_UpdateUserNormalizedEmail";
-            return ExecuteStoredProcedureAsync(storedProcedure, new { email = user.Email });
-        }
+        //    string storedProcedure = "dbo.sp_UpdateUserNormalizedEmail";
+        //    return ExecuteStoredProcedureAsync(storedProcedure, new { email = user.Email });
+        //}
 
-        public Task UpdateNormalizedUserName(User user)
-        {
-            if (String.IsNullOrEmpty(user.Email))
-            {
-                throw new ArgumentNullException("user.Email");
-            }
+        //public Task UpdateNormalizedUserName(User user)
+        //{
+        //    if (String.IsNullOrEmpty(user.Email))
+        //    {
+        //        throw new ArgumentNullException("user.Email");
+        //    }
 
-            if (String.IsNullOrEmpty(user.NormalizedUserName))
-            {
-                throw new ArgumentNullException("user.NormalizedUserName");
-            }
+        //    if (String.IsNullOrEmpty(user.NormalizedUserName))
+        //    {
+        //        throw new ArgumentNullException("user.NormalizedUserName");
+        //    }
 
-            string storedProcedure = "dbo.sp_UpdateUserNormalizedUserName";
-            return ExecuteStoredProcedureAsync(storedProcedure, new { email = user.Email, normalizedUserName = user.NormalizedUserName });
-        }
-
-        public Task UpdatePasswordHash(User user)
-        {
-            if (String.IsNullOrEmpty(user.Email))
-            {
-                throw new ArgumentNullException("user.Email");
-            }
-
-            if (String.IsNullOrEmpty(user.PasswordHash))
-            {
-                throw new ArgumentNullException("user.PasswordHash");
-            }
-
-            string storedProcedure = "dbo.sp_UpdateUserPasswordHash";
-            return ExecuteStoredProcedureAsync(storedProcedure, new { email = user.Email, passwordHash = user.PasswordHash });
-        }
+        //    string storedProcedure = "dbo.sp_UpdateUserNormalizedUserName";
+        //    return ExecuteStoredProcedureAsync(storedProcedure, new { email = user.Email, normalizedUserName = user.NormalizedUserName });
+        //}
 
 
 

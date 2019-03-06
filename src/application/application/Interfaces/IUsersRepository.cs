@@ -13,10 +13,9 @@ namespace kodex.Application.Interfaces
         Task<User> GetUserByID(string id);
         Task<User> GetUserByUserName(string normalizedUserName);
         Task<IEnumerable<User>> GetUsers();
-        Task UpdateEmail(User user);
-        Task UpdateNormalizedEmail(User user);
-        Task UpdateNormalizedUserName(User user);
-        Task UpdatePasswordHash(User user);
+        //Task UpdateEmail(User user);
+        //Task UpdateNormalizedEmail(User user);
+        //Task UpdateNormalizedUserName(User user);
 
         Task<bool> AddUserToRole(User user, Role role);
         Task<Role> GetRoleByID(string id);

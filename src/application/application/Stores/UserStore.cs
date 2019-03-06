@@ -69,8 +69,10 @@ namespace kodex.Application.Stores
 
         public Task SetNormalizedUserNameAsync(User user, string normalizedName, CancellationToken cancellationToken)
         {
-            var newUser = new User() { Email = user.Email, NormalizedUserName = normalizedName };
-            return _identityRepository.UpdateNormalizedUserName(newUser);
+            //var newUser = new User() { Email = user.Email, NormalizedUserName = normalizedName };
+            //return _identityRepository.UpdateNormalizedUserName(newUser);
+            user.NormalizedUserName = normalizedName;
+            return Task.CompletedTask;
         }
 
         public Task SetUserNameAsync(User user, string userName, CancellationToken cancellationToken)
@@ -99,8 +101,8 @@ namespace kodex.Application.Stores
 
         public Task SetPasswordHashAsync(User user, string passwordHash, CancellationToken cancellationToken)
         {
-            var newUser = new User() { Email = user.Email, PasswordHash = passwordHash };
-            return _identityRepository.UpdatePasswordHash(newUser);
+            user.PasswordHash = passwordHash;
+            return Task.CompletedTask;
         }
 
 
@@ -131,8 +133,10 @@ namespace kodex.Application.Stores
 
         public Task SetEmailAsync(User user, string email, CancellationToken cancellationToken)
         {
-            var newUser = new User() { Id = user.Id, Email = email };
-            return _identityRepository.UpdateEmail(user);
+            //var newUser = new User() { Id = user.Id, Email = email };
+            //return _identityRepository.UpdateEmail(user);
+            user.Email = email;
+            return Task.CompletedTask;
         }
 
         public Task SetEmailConfirmedAsync(User user, bool confirmed, CancellationToken cancellationToken)
@@ -143,8 +147,10 @@ namespace kodex.Application.Stores
         public Task SetNormalizedEmailAsync(User user, string normalizedEmail, CancellationToken cancellationToken)
         {
             // email is normalized in db
-            var newUser = new User() { Email = user.Email };
-            return _identityRepository.UpdateNormalizedEmail(user);
+            //var newUser = new User() { Email = user.Email };
+            //return _identityRepository.UpdateNormalizedEmail(user);
+            user.NormalizedEmail = normalizedEmail;
+            return Task.CompletedTask;
         }
 
 
