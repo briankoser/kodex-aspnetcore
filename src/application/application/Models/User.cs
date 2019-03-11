@@ -22,5 +22,7 @@ namespace kodex.Application.Models
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
         public List<Role> Roles { get; set; }
+
+        public string DisplayName { get; set; }
     }
 }

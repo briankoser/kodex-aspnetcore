@@ -1,6 +1,6 @@
 USE [master]
 GO
-/****** Object:  Database [kodexdb]    Script Date: 3/11/2019 2:04:03 PM ******/
+/****** Object:  Database [kodexdb]    Script Date: 3/11/2019 3:23:18 PM ******/
 CREATE DATABASE [kodexdb]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -97,7 +97,7 @@ ALTER DATABASE SCOPED CONFIGURATION FOR SECONDARY SET QUERY_OPTIMIZER_HOTFIXES =
 GO
 USE [kodexdb]
 GO
-/****** Object:  User [brian]    Script Date: 3/11/2019 2:04:06 PM ******/
+/****** Object:  User [brian]    Script Date: 3/11/2019 3:23:21 PM ******/
 CREATE USER [brian] FOR LOGIN [brian] WITH DEFAULT_SCHEMA=[brian]
 GO
 ALTER ROLE [db_ddladmin] ADD MEMBER [brian]
@@ -108,13 +108,13 @@ ALTER ROLE [db_datareader] ADD MEMBER [brian]
 GO
 ALTER ROLE [db_datawriter] ADD MEMBER [brian]
 GO
-/****** Object:  Schema [brian]    Script Date: 3/11/2019 2:04:07 PM ******/
+/****** Object:  Schema [brian]    Script Date: 3/11/2019 3:23:22 PM ******/
 CREATE SCHEMA [brian]
 GO
-/****** Object:  Schema [koserus_kodex]    Script Date: 3/11/2019 2:04:07 PM ******/
+/****** Object:  Schema [koserus_kodex]    Script Date: 3/11/2019 3:23:22 PM ******/
 CREATE SCHEMA [koserus_kodex]
 GO
-/****** Object:  View [dbo].[posts]    Script Date: 3/11/2019 2:04:07 PM ******/
+/****** Object:  View [dbo].[posts]    Script Date: 3/11/2019 3:23:22 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -156,7 +156,19 @@ SELECT post.id
 	   ) authors
 	ON post.id = authors.postid
 GO
-/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 3/11/2019 2:04:07 PM ******/
+/****** Object:  View [dbo].[Users]    Script Date: 3/11/2019 3:23:22 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create view [dbo].[Users] as
+SELECT [AspNetUsers].*,
+	   author.firstname AS DisplayName
+FROM [dbo].[AspNetUsers]
+JOIN dbo.author 
+ON [AspNetUsers].id = author.aspnetuserid
+GO
+/****** Object:  Table [dbo].[AspNetRoles]    Script Date: 3/11/2019 3:23:22 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -172,7 +184,7 @@ CREATE TABLE [dbo].[AspNetRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 3/11/2019 2:04:09 PM ******/
+/****** Object:  Table [dbo].[AspNetUserRoles]    Script Date: 3/11/2019 3:23:23 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -187,7 +199,7 @@ CREATE TABLE [dbo].[AspNetUserRoles](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 3/11/2019 2:04:09 PM ******/
+/****** Object:  Table [dbo].[AspNetUsers]    Script Date: 3/11/2019 3:23:24 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +226,7 @@ CREATE TABLE [dbo].[AspNetUsers](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[author]    Script Date: 3/11/2019 2:04:09 PM ******/
+/****** Object:  Table [dbo].[author]    Script Date: 3/11/2019 3:23:24 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -230,7 +242,7 @@ CREATE TABLE [dbo].[author](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[author_site]    Script Date: 3/11/2019 2:04:10 PM ******/
+/****** Object:  Table [dbo].[author_site]    Script Date: 3/11/2019 3:23:24 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -245,7 +257,7 @@ CREATE TABLE [dbo].[author_site](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[authorhistory]    Script Date: 3/11/2019 2:04:10 PM ******/
+/****** Object:  Table [dbo].[authorhistory]    Script Date: 3/11/2019 3:23:25 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -261,7 +273,7 @@ CREATE TABLE [dbo].[authorhistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[book]    Script Date: 3/11/2019 2:04:11 PM ******/
+/****** Object:  Table [dbo].[book]    Script Date: 3/11/2019 3:23:26 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -282,7 +294,7 @@ CREATE TABLE [dbo].[book](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[book_booktag]    Script Date: 3/11/2019 2:04:11 PM ******/
+/****** Object:  Table [dbo].[book_booktag]    Script Date: 3/11/2019 3:23:26 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -297,7 +309,7 @@ CREATE TABLE [dbo].[book_booktag](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[bookreview]    Script Date: 3/11/2019 2:04:11 PM ******/
+/****** Object:  Table [dbo].[bookreview]    Script Date: 3/11/2019 3:23:26 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -316,7 +328,7 @@ CREATE TABLE [dbo].[bookreview](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[booktag]    Script Date: 3/11/2019 2:04:11 PM ******/
+/****** Object:  Table [dbo].[booktag]    Script Date: 3/11/2019 3:23:27 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -332,7 +344,7 @@ CREATE TABLE [dbo].[booktag](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[post]    Script Date: 3/11/2019 2:04:12 PM ******/
+/****** Object:  Table [dbo].[post]    Script Date: 3/11/2019 3:23:27 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -362,7 +374,7 @@ CREATE TABLE [dbo].[post](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[post_author]    Script Date: 3/11/2019 2:04:12 PM ******/
+/****** Object:  Table [dbo].[post_author]    Script Date: 3/11/2019 3:23:27 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -377,7 +389,7 @@ CREATE TABLE [dbo].[post_author](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[post_tag]    Script Date: 3/11/2019 2:04:12 PM ******/
+/****** Object:  Table [dbo].[post_tag]    Script Date: 3/11/2019 3:23:27 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -392,7 +404,7 @@ CREATE TABLE [dbo].[post_tag](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[posttype]    Script Date: 3/11/2019 2:04:13 PM ******/
+/****** Object:  Table [dbo].[posttype]    Script Date: 3/11/2019 3:23:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -408,7 +420,7 @@ CREATE TABLE [dbo].[posttype](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[site]    Script Date: 3/11/2019 2:04:13 PM ******/
+/****** Object:  Table [dbo].[site]    Script Date: 3/11/2019 3:23:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -424,7 +436,7 @@ CREATE TABLE [dbo].[site](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[tag]    Script Date: 3/11/2019 2:04:13 PM ******/
+/****** Object:  Table [dbo].[tag]    Script Date: 3/11/2019 3:23:28 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -514,7 +526,7 @@ REFERENCES [dbo].[tag] ([id])
 GO
 ALTER TABLE [dbo].[post_tag] CHECK CONSTRAINT [FK_post_tag_tag]
 GO
-/****** Object:  StoredProcedure [dbo].[sp_InsertPost]    Script Date: 3/11/2019 2:04:14 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_InsertPost]    Script Date: 3/11/2019 3:23:29 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -563,7 +575,7 @@ BEGIN
 	  FROM STRING_SPLIT(@authors, ',');
 END
 GO
-/****** Object:  StoredProcedure [dbo].[sp_InsertUser]    Script Date: 3/11/2019 2:04:14 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_InsertUser]    Script Date: 3/11/2019 3:23:29 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON

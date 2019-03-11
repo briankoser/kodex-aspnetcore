@@ -43,7 +43,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 throw new ArgumentNullException(nameof(email));
             }
 
-            string query = "SELECT * FROM dbo.AspNetUsers WHERE Email = @Email";
+            string query = "SELECT * FROM dbo.users WHERE Email = @Email";
             return QueryFirstOrDefaultAsync<User>(query, new { Email = email });
         }
 
@@ -54,7 +54,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 throw new ArgumentNullException(nameof(id));
             }
 
-            string query = "SELECT * FROM dbo.AspNetUsers WHERE Id = @ID";
+            string query = "SELECT * FROM dbo.users WHERE Id = @ID";
             return QueryFirstOrDefaultAsync<User>(query, new { ID = id });
         }
 
@@ -65,7 +65,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 throw new ArgumentNullException(nameof(normalizedUserName));
             }
 
-            string query = "SELECT * FROM dbo.AspNetUsers WHERE NormalizedUserName = @normalizedUserName";
+            string query = "SELECT * FROM dbo.users WHERE NormalizedUserName = @normalizedUserName";
             return QueryFirstOrDefaultAsync<User>(query, new { normalizedUserName });
         }
 
