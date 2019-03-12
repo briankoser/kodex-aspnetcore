@@ -2,9 +2,11 @@ using kodex.Application.Interfaces;
 using kodex.Application.Models;
 using kodex.Application.Stores;
 using kodex.Infrastructure.Data.DBAccess;
+using kodex.Infrastructure.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,11 +26,13 @@ namespace kodex
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IPostsRepository, PostsRepository>();
+            services.AddTransient<IEmailSender, EmailSender>();
             services.AddTransient<IIdentityRepository, IdentityRepository>();
-            services.AddTransient<IUserStore<User>, UserStore>();
+            services.AddTransient<IPostsRepository, PostsRepository>();
             services.AddTransient<IRoleStore<Role>, RoleStore>();
             services.AddTransient<ISqlDataSourceConfig, SqlDataSourceConfig>();
+            services.AddTransient<IUserStore<User>, UserStore>();
+
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddRazorPagesOptions(options =>
@@ -42,6 +46,7 @@ namespace kodex
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}/{day:int}");
                 });
             services.AddIdentity<User, Role>();
+            services.ConfigureApplicationCookie(options => options.LoginPath = "/login");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
