@@ -173,8 +173,8 @@ namespace kodex.Infrastructure.Data.Repositories
         /// <param name="sql">The command to execute.</param>
         /// <param name="parameters">The parameters to supply to the command, if any.</param>
         /// <returns>The number of rows affected.</returns>
-        protected Task<int> ExecuteAsync(string sql, object parameters) =>
-            WithConnection(conn => conn.ExecuteAsync(sql, parameters));
+        protected Task<int> ExecuteStoredProcedureAsync(string sql, object parameters) =>
+            WithConnection(conn => conn.ExecuteAsync(sql, parameters, null, null, CommandType.StoredProcedure));
 
         /// <summary>
         ///     Wrap the async Dapper call with default connection setup, disposal, and exception handling.
@@ -183,7 +183,7 @@ namespace kodex.Infrastructure.Data.Repositories
         /// <param name="parameters">The parameters to supply to the command, if any.</param>
         /// <param name="scope">The transaction scope.</param>
         /// <returns>The number of rows affected.</returns>
-        protected Task<int> ExecuteAsync(string sql, object parameters, ITransactionScope scope) =>
-            scope.Connection.ExecuteAsync(sql, parameters, scope.Transaction);
+        protected Task<int> ExecuteStoredProcedureAsync(string sql, object parameters, ITransactionScope scope) =>
+            scope.Connection.ExecuteAsync(sql, parameters, scope.Transaction, null, CommandType.StoredProcedure);
     }
 }

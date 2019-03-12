@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using kodex.Application.Models
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })" method="post" id="logoutForm">
+        @*todo: user icon*@
+        @{ var displayName = (await @UserManager.GetUserAsync(User))?.DisplayName; }
+        <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">@displayName</a>
+        <button type="submit" class="btn btn-link navbar-btn navbar-link">Logout</button>
+    </form>
+}
