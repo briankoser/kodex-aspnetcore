@@ -11,5 +11,6 @@ namespace kodex.Application.Interfaces
         Task<Post> GetByID(int id);
         Task<Post> GetByUrl(int year, int month, int day, int datePublishedID);
         Task<List<Post>> GetByOptions(IPostOptions options);
+        Task<bool> InsertPost(Post post);
     }
 }

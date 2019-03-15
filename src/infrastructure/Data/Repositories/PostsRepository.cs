@@ -3,6 +3,7 @@ using kodex.Application.Models;
 using kodex.Infrastructure.Data.Repositories;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -55,6 +56,34 @@ namespace kodex.Infrastructure.Data.DBAccess
                 (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
                 parameters: new { options.StartDate, options.Category, options.Year, options.Month, options.Day, options.Author, },
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
+        }
+
+        public async Task<bool> InsertPost(Post post)
+        {
+            if (post == null)
+            {
+                throw new ArgumentNullException(nameof(post));
+            }
+
+            string storedProcedure = "dbo.sp_InsertPost";
+            var parameters = new
+                {
+                    postTypeID = post.PostType.PostTypeID,
+                    title = post.Title,
+                    slug = post.Slug,
+                    body = post.Body,
+                    bodyRaw = post.BodyRaw,
+                    description = post.Description,
+                    datePublished = post.DatePublished,
+                    excerpt = post.Excerpt,
+                    imageUrl = post.ImageUrl,
+                    isPublic = post.IsPublic,
+                    authors = post.Author.AuthorIDs
+                };
+
+            int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);
+
+            return rows > 0;
         }
     }
 }
