@@ -1,8 +1,39 @@
 ﻿@page
-@model Web.Pages.NewModel
+@model Web.Pages.NewPostModel
 @{
     ViewData["Title"] = "New";
 }
 
 <h2>New</h2>
 
+<form method="post">
+    @*PostTypeID = 1*@
+
+    <label asp-for="Title"></label>
+    <input asp-for="Title" />
+
+    <label asp-for="Slug"></label>
+    <input asp-for="Slug" />
+
+    <label asp-for="Description"></label>
+    <input asp-for="Description" />
+
+    <label asp-for="DatePublished"></label>
+    <input asp-for="DatePublished" />
+
+    <label asp-for="ImageUrl"></label>
+    <input asp-for="ImageUrl" />
+
+    <label asp-for="IsPublic"></label>
+    <input asp-for="IsPublic" />
+
+    <label asp-for="Body"></label>
+    <textarea asp-for="Body"></textarea>
+
+    <label asp-for="Excerpt"></label>
+    <textarea asp-for="Excerpt"></textarea>
+
+    <button type="submit">Save</button>
+
+    @*AuthorIDs = "2"*@
+</form>
