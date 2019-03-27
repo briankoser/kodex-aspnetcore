@@ -2,6 +2,9 @@
   "version": "1.0.0",
   "name": "koser",
   "private": true,
+  "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "12.0.0"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "3.1.0",
