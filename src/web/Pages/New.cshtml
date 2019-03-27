@@ -4,36 +4,55 @@
     ViewData["Title"] = "New";
 }
 
-<h2>New</h2>
-
 <form method="post">
-    @*PostTypeID = 1*@
+    <fieldset>
+        <legend>New</legend>
 
-    <label asp-for="Title"></label>
-    <input asp-for="Title" />
+        @*PostTypeID = 1*@
 
-    <label asp-for="Slug"></label>
-    <input asp-for="Slug" />
+        @*AuthorIDs = "2"*@
 
-    <label asp-for="Description"></label>
-    <input asp-for="Description" />
+        <div class="form-group">
+            <label asp-for="Title"></label>
+            <input asp-for="Title" />
+        </div>
 
-    <label asp-for="DatePublished"></label>
-    <input asp-for="DatePublished" />
+        <div class="form-group">
+            <label asp-for="Slug"></label>
+            <input asp-for="Slug" />
+        </div>
 
-    <label asp-for="ImageUrl"></label>
-    <input asp-for="ImageUrl" />
+        <div class="form-group">
+            <label asp-for="Description"></label>
+            <input asp-for="Description" />
+        </div>
 
-    <label asp-for="IsPublic"></label>
-    <input asp-for="IsPublic" />
+        <div class="form-group">
+            <label asp-for="DatePublished"></label>
+            <input asp-for="DatePublished" />
+        </div>
 
-    <label asp-for="Body"></label>
-    <textarea asp-for="Body"></textarea>
+        <div class="form-group">
+            <label asp-for="ImageUrl"></label>
+            <input asp-for="ImageUrl" />
+        </div>
 
-    <label asp-for="Excerpt"></label>
-    <textarea asp-for="Excerpt"></textarea>
+        <div class="form-group">
+            <input-checkbox id="isPublic" label="Publish"></input-checkbox>
+        </div>
 
-    <button type="submit">Save</button>
+        <div class="form-group">
+            <label asp-for="Body"></label>
+            <textarea asp-for="Body"></textarea>
+        </div>
 
-    @*AuthorIDs = "2"*@
+        <div class="form-group">
+            <label asp-for="Excerpt"></label>
+            <textarea asp-for="Excerpt"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Save</button>
+        </div>
+    </fieldset>
 </form>

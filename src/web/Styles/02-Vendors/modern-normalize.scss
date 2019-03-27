@@ -183,9 +183,9 @@ progress {
  * Remove the inner padding in Chrome and Safari on macOS.
  */
 
-    [type='search']::-webkit-search-decoration {
-        -webkit-appearance: none;
-    }
+[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
 
 /**
  * 1. Correct the inability to style clickable types in iOS and Safari.

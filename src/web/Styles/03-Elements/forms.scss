@@ -3,24 +3,114 @@
 /* form, fieldset, legend, label, input, button, select, optgroup, option, 
   datalist, textarea, output */
 
+form {
+    border-color: black;
+}
+
+form[class*="-field"] {
+    display: inline-block;
+    line-height: 1.1;
+    margin: 0;
+    vertical-align: middle;
+    white-space: normal;
+}
+
+form[class*="decor"] {
+    line-height: 0;
+}
+
+form input::-webkit-input-placeholder,
+form textarea::-webkit-input-placeholder,
+form select::-webkit-input-placeholder {
+    line-height: normal;
+}
+
+form button {
+       -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    border-bottom: 1px solid black;
+    @include font-size(2);
+    @include line-height(2);
+    @include margin-bottom(1);
+    padding: 0 0 5px 0;
+    width: 100%;
+}
+
+label {
+    @include font-size(-1);
+}
+
+label[for] {
+    cursor: pointer;
+}
+
+label:after {
+    content: "\A";
+    white-space: pre;
+}
+
+label + input {
+    margin-top: 2px;
+}
+
+input,
+button,
 select {
-    display: block;
+    border-radius: 1em;
+}
+
+input,
+select {
+    background-color: white;
+    border: 1px solid black;
     @include font-size(0);
     @include line-height(0);
-    padding: .6em 1.4em .5em .8em;
+    padding: 0.6em 0.8em;
     width: 100%;
     max-width: 100%; /* useful when width is set to anything other than 100% */
-    box-sizing: border-box;
+}
+
+input {
+    display: block;
+}
+
+button {
+    background: black;
+    border: none;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1rem;
     margin: 0;
-    border: 1px solid #aaa;
+    padding: 0.5em 1.3em;
+    text-decoration: none;
+    text-align: center;
+}
+
+button:hover,
+button:focus {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+
+select {
+    display: block;
+    margin: 0;
     box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
-    border-radius: .5em;
        -moz-appearance: none;
     -webkit-appearance: none;
             appearance: none;
-    background-color: #fff;
     /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E'), linear-gradient(to bottom, #ffffff 0%,#e5e5e5 100%);
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat, repeat;
     /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
     background-position: right .7em top 50%, 0 0;
@@ -48,4 +138,19 @@ select:focus {
 
 select option {
     @include font-size(0);
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+    vertical-align: top;
+    width: 100%;
+}
+
+textarea:not([rows]) {
+    min-height: 180px;
+}
+
+.form-group + .form-group {
+    @include padding-top(1);
 }

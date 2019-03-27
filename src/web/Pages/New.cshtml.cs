@@ -15,8 +15,6 @@ namespace Web.Pages
     [BindProperties]
     public class NewPostModel : PageModel
     {
-        //PostTypeID = 1
-
         public string Title { get; set; }
 
         [Display(Name = "URL")]
@@ -46,6 +44,11 @@ namespace Web.Pages
         public NewPostModel(IPostsRepository postsRepository)
         {
             _postsRepository = postsRepository;
+        }
+
+        public void OnGet()
+        {
+
         }
 
         public void OnPost()
