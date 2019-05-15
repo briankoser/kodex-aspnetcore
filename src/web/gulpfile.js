@@ -7,7 +7,7 @@ let sass = require("gulp-sass");
 let paths = {
     scss: "Styles/**/*.scss",
     css: "./wwwroot/css",
-    node: ['./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js'],
+    node: [], //['./node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js'],
     js: "./wwwroot/lib"
 };
 
