@@ -15,7 +15,8 @@ namespace kodex.Application.Models
         public string Slug { get; set; }
         public string Url { get; set; }
         public string Body { get; set; }
-        public string BodyRaw { get; set; }
+        public string BodyText { get; set; }
+        public string BodyProcessed { get; set; }
         public string Description { get; set; }
 
         [DisplayFormat(DataFormatString = DateFormat)]

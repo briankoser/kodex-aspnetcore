@@ -52,8 +52,10 @@
         </div>
 
         <div class="form-group">
-            <button type="submit">Save</button>
+            <button type="submit" id="submit">Save</button>
         </div>
+
+        <input type="hidden" asp-for="BodyText" id="bodyText" />
     </fieldset>
 </form>
 
@@ -69,5 +71,9 @@
             .catch(error => {
                 console.error(error);
             });
+
+        document.querySelector('#submit').addEventListener('click', () => {
+            document.querySelector('#bodyText').value = document.querySelector('.ck-content').innerText;
+        });
     </script>
 }

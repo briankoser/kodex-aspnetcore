@@ -22,6 +22,8 @@ namespace Web.Pages
 
         public string Body { get; set; }
 
+        public string BodyText { get; set; }
+
         public string Description { get; set; }
 
         [Display(Name = "Publish Date")]
@@ -53,6 +55,9 @@ namespace Web.Pages
 
         public void OnPost()
         {
+            // todo: process body, store in BodyProcessed
+            string bodyProcessed = Body;
+
             var post = new Post()
             {
                 PostType = new PostType()
@@ -62,7 +67,8 @@ namespace Web.Pages
                 Title = Title,
                 Slug = Slug,
                 Body = Body,
-                BodyRaw = null,
+                BodyText = BodyText,
+                BodyProcessed = bodyProcessed,
                 Description = Description,
                 DatePublished = DatePublished,
                 Excerpt = Excerpt,
