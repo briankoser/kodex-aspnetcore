@@ -53,4 +53,5 @@ h1 + * {
 
 main > h1 {
     @include margin-top(0);
+    line-height: 1;
 }

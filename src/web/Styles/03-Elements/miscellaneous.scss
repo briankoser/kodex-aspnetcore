@@ -5,3 +5,15 @@ hr {
     background: url(fleuron.svg) center no-repeat; /* todo: get image; fleuron? five dots to match logo (like The Ringer) */
     background-size: contain;
 }
+
+::-moz-selection {
+    background: black;
+    color: white;
+    text-shadow: none;
+}
+
+::selection {
+    background-color: black;
+    color: white;
+    text-shadow: none;
+}
