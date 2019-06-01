@@ -11,8 +11,7 @@ h6, .h6 {
 }
 
 h1, .h1,
-h2, .h2,
-h4, .h4 {
+h2, .h2 {
     font-family: ConcourseLight, OpenSansLightNumero, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
@@ -27,7 +26,7 @@ h1, .h1 {
 h2, .h2 {
     @include font-size(2);
     @include line-height(2);
-    @include margin-top(2);
+    @include margin-top(1);
     @include margin-bottom(1);
 }
 
