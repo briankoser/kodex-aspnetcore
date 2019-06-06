@@ -39,6 +39,17 @@ namespace kodex.Infrastructure.Data.DBAccess
                 splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
 
+        public async Task<List<Post>> GetAll()
+        {
+            string query = @"SELECT * 
+                               FROM dbo.Posts 
+                              ORDER BY datepublished DESC, title;";
+            return (await QueryAsync<Post, PostType, Author, Post>(
+                query,
+                (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
+                splitOn: "PostTypeID,AuthorIDs")).ToList();
+        }
+
         public async Task<List<Post>> GetByOptions(IPostOptions options)
         {
             string query = @"SELECT * 
@@ -81,6 +92,35 @@ namespace kodex.Infrastructure.Data.DBAccess
                     isPublic = post.IsPublic,
                     authors = post.Author.AuthorIDs
                 };
+
+            int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> UpdatePost(Post post)
+        {
+            if (post == null)
+            {
+                throw new ArgumentNullException(nameof(post));
+            }
+
+            string storedProcedure = "dbo.sp_UpdatePost";
+            var parameters = new
+            {
+                id = post.ID,
+                title = post.Title,
+                slug = post.Slug,
+                body = post.Body,
+                bodyText = post.BodyText,
+                bodyProcessed = post.BodyProcessed,
+                description = post.Description,
+                datePublished = post.DatePublished,
+                excerpt = post.Excerpt,
+                imageUrl = post.ImageUrl,
+                isPublic = post.IsPublic,
+                authors = post.Author.AuthorIDs
+            };
 
             int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);
 
