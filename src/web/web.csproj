@@ -25,4 +25,9 @@
     <ProjectReference Include="..\application\application\Application.csproj" />
     <ProjectReference Include="..\infrastructure\Infrastructure.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="Pages\Admin\Posts.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
 </Project>

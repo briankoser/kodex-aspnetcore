@@ -27,7 +27,7 @@ else
         <tr>
             <td><a asp-page="./Post/" asp-route-id="@post.ID">Edit</a></td>
             <td>@Html.DisplayFor(modelItem => post.PostType.Name)</td>
-            <td>@Html.DisplayFor(modelItem => post.Author.ShortName)</td>
+            <td>@Html.DisplayFor(modelItem => post.Authors.ShortNames)</td>
             <td>@Html.DisplayFor(modelItem => post.Title)</td>
             <td>@Html.DisplayFor(modelItem => post.DatePublished)</td>
             <td>@Html.DisplayFor(modelItem => post.Description)</td>

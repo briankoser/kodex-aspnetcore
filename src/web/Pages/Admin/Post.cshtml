@@ -10,66 +10,69 @@
 
         @*PostTypeID = 1*@
 
-        @*AuthorIDs = "2"*@
-
         <div class="form-group">
-            <label asp-for="Post.Title"></label>
-            <input asp-for="Post.Title" />
+            <label asp-for="Post.Authors"></label>
+            <div input-checkboxlist="Model.Authors" input-modelname="authors"></div>
         </div>
 
-        <div class="form-group">
-            <label asp-for="Post.Slug"></label>
-            <input asp-for="Post.Slug" />
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.Title"></label>
+                <input asp-for="Post.Title" />
+            </div>
 
-        <div class="form-group">
-            <label asp-for="Post.Description"></label>
-            <input asp-for="Post.Description" />
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.Slug"></label>
+                <input asp-for="Post.Slug" />
+            </div>
 
-        <div class="form-group">
-            <label asp-for="Post.ImageUrl"></label>
-            <input asp-for="Post.ImageUrl" />
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.Description"></label>
+                <input asp-for="Post.Description" />
+            </div>
 
-        <div class="form-group">
-            <input-checkbox id="isPublic" label="Publish"></input-checkbox>
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.ImageUrl"></label>
+                <input asp-for="Post.ImageUrl" />
+            </div>
 
-        <div class="form-group">
-            <label asp-for="Post.Body"></label>
-            <textarea asp-for="Post.Body" id="editor" rows="10"></textarea>
-        </div>
+            <div class="form-group">
+                <input-checkbox id="isPublic" label="Publish"></input-checkbox>
+            </div>
 
-        <div class="form-group">
-            <label asp-for="Post.Excerpt"></label>
-            <textarea asp-for="Post.Excerpt" rows="3"></textarea>
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.Body"></label>
+                <textarea asp-for="Post.Body" id="editor" rows="10"></textarea>
+            </div>
 
-        <div class="form-group">
-            <button type="submit" id="submit">Save</button>
-        </div>
+            <div class="form-group">
+                <label asp-for="Post.Excerpt"></label>
+                <textarea asp-for="Post.Excerpt" rows="3"></textarea>
+            </div>
 
-        <input type="hidden" asp-for="Post.ID" />
-        <input type="hidden" asp-for="Post.BodyText" id="bodyText" />
-    </fieldset>
-</form>
+            <div class="form-group">
+                <button type="submit" id="submit">Save</button>
+            </div>
 
-@section Scripts {
-    <script src="~/js/ckeditor.js" asp-append-version="true"></script>
+            <input type="hidden" asp-for="Post.ID" />
+            <input type="hidden" asp-for="Post.BodyText" id="bodyText" />
+        </fieldset>
+            </form>
 
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(editor => {
-                console.log(editor);
-            })
-            .catch(error => {
-                console.error(error);
-            });
+            @section Scripts {
+                <script src="~/js/ckeditor.js" asp-append-version="true"></script>
 
-        document.querySelector('#submit').addEventListener('click', () => {
-            document.querySelector('#bodyText').value = document.querySelector('.ck-content').innerText;
-        });
-    </script>
-}
+                <script>
+                    ClassicEditor
+                        .create(document.querySelector('#editor'))
+                        .then(editor => {
+                            console.log(editor);
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+
+                    document.querySelector('#submit').addEventListener('click', () => {
+                        document.querySelector('#bodyText').value = document.querySelector('.ck-content').innerText;
+                    });
+                </script>
+            }

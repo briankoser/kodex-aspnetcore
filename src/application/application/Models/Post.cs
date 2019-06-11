@@ -10,7 +10,7 @@ namespace kodex.Application.Models
 
         public int ID { get; set; }
         public PostType PostType { get; set; }
-        public Author Author { get; set; }
+        public Authors Authors { get; set; }
         public string Title { get; set; }
 
         [Display(Name = "URL")]

@@ -8,7 +8,8 @@ namespace kodex.Application.Interfaces
 {
     public interface IPostsRepository
     {
-        Task<Post> GetByID(int id);
+        Task<List<Author>> GetAuthorsAsync();
+        Task<Post> GetByIDAsync(int id);
         Task<Post> GetByUrl(int year, int month, int day, int datePublishedID);
         Task<List<Post>> GetAll();
         Task<List<Post>> GetByOptions(IPostOptions options);

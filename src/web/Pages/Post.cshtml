@@ -8,7 +8,7 @@
     <header>
         <h1>@Html.DisplayFor(modelItem => Model.Post.Title)</h1>
         <span class="post-header">
-            <span class="post-author">@Html.DisplayFor(modelItem => Model.Post.Author.ShortName)</span> ·
+            <span class="post-author">@Html.DisplayFor(modelItem => Model.Post.Authors.ShortNames)</span> ·
             <span class="post-date">@Html.DisplayFor(modelItem => Model.Post.DatePublished)</span>
             <span class="post-update-date">@Html.DisplayFor(modelItem => Model.Post.DateLastUpdatedMessage)</span>
         </span>

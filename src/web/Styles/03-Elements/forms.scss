@@ -154,3 +154,8 @@ textarea:not([rows]) {
 .form-group + .form-group {
     @include padding-top(1);
 }
+
+.checkboxlist input {
+    display: inline;
+    width: initial;
+}

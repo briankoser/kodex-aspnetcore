@@ -12,15 +12,27 @@ namespace kodex.Infrastructure.Data.DBAccess
 {
     public class PostsRepository : SqlRepository, IPostsRepository
     {
+        public async Task<List<Author>> GetAuthorsAsync()
+        {
+            string query = @"SELECT id, firstname AS shortname, fullname 
+                               FROM dbo.Author;";
+            return (await QueryAsync<Author>(query)).ToList();
+        }
+
         public PostsRepository(ISqlDataSourceConfig config, ILogger<PostsRepository> logger)
             : base(config.SqlServerConnectionString, logger)
         {
         }
 
-        public Task<Post> GetByID(int id)
+        public async Task<Post> GetByIDAsync(int id)
         {
             string query = "SELECT * FROM dbo.Posts WHERE ID = @ID";
-            return QueryFirstOrDefaultAsync<Post>(query, new { ID = id });
+            //return QueryFirstOrDefaultAsync<Post>(query, new { ID = id });
+            return (await QueryAsync<Post, PostType, Authors, Post>(
+                query,
+                (post, postType, authors) => { post.PostType = postType; post.Authors = authors; return post; },
+                parameters: new { id },
+                splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
 
         public async Task<Post> GetByUrl(int year, int month, int day, int datePublishedID)
@@ -32,9 +44,9 @@ namespace kodex.Infrastructure.Data.DBAccess
                                 AND day(datepublished) = @Day
                                 AND datepublishedid = @DatePublishedID
                                 AND ispublic = 1;";
-            return (await QueryAsync<Post, PostType, Author, Post>(
+            return (await QueryAsync<Post, PostType, Authors, Post>(
                 query,
-                (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
+                (post, postType, authors) => { post.PostType = postType; post.Authors = authors; return post; },
                 parameters: new { Year = year, Month = month, Day = day, DatePublishedID = datePublishedID },
                 splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
@@ -44,9 +56,9 @@ namespace kodex.Infrastructure.Data.DBAccess
             string query = @"SELECT * 
                                FROM dbo.Posts 
                               ORDER BY datepublished DESC, title;";
-            return (await QueryAsync<Post, PostType, Author, Post>(
+            return (await QueryAsync<Post, PostType, Authors, Post>(
                 query,
-                (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
+                (post, postType, authors) => { post.PostType = postType; post.Authors = authors; return post; },
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
 
@@ -62,9 +74,9 @@ namespace kodex.Infrastructure.Data.DBAccess
                                 AND (lower(shortname) LIKE '%' + @Author + '%' OR @Author = 'all')
                                 AND ispublic = 1
                               ORDER BY datepublished DESC;";
-            return (await QueryAsync<Post, PostType, Author, Post>(
+            return (await QueryAsync<Post, PostType, Authors, Post>(
                 query,
-                (post, postType, author) => { post.PostType = postType; post.Author = author; return post; },
+                (post, postType, authors) => { post.PostType = postType; post.Authors = authors; return post; },
                 parameters: new { options.StartDate, options.Category, options.Year, options.Month, options.Day, options.Author, },
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
@@ -90,7 +102,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                     excerpt = post.Excerpt,
                     imageUrl = post.ImageUrl,
                     isPublic = post.IsPublic,
-                    authors = post.Author.AuthorIDs
+                    authors = post.Authors.AuthorIDs
                 };
 
             int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);
@@ -119,7 +131,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 excerpt = post.Excerpt,
                 imageUrl = post.ImageUrl,
                 isPublic = post.IsPublic,
-                authors = post.Author.AuthorIDs
+                authors = post.Authors.AuthorIDs
             };
 
             int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);

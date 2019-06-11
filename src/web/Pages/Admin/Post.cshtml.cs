@@ -1,9 +1,14 @@
 ﻿using kodex.Application.Interfaces;
 using kodex.Application.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace kodex.Pages
 {
@@ -11,21 +16,37 @@ namespace kodex.Pages
     [BindProperties]
     public class AdminPostModel : PageModel
     {
-        public Post Post { get; set; }
-
+        private readonly UserManager<User> _userManager;
         private IPostsRepository _postsRepository;
 
-        public AdminPostModel(IPostsRepository postsRepository)
+        public IEnumerable<SelectListItem> Authors { get; set; }
+        public Post Post { get; set; }
+
+
+
+        public AdminPostModel(UserManager<User> userManager, IPostsRepository postsRepository)
         {
+            _userManager = userManager;
             _postsRepository = postsRepository;
         }
 
-        public async void OnGetAsync(int? id)
+        public async Task OnGetAsync(int? id)
         {
+            var authors = await _postsRepository.GetAuthorsAsync();
+
             if (id.HasValue)
             {
-                Post = await _postsRepository.GetByID(id.Value);
+                Post = await _postsRepository.GetByIDAsync(id.Value);
+                Authors = authors
+                    .Select(a => new SelectListItem(a.ShortName, a.ID.ToString(), Post.Authors.IDs.Contains(a.ID)));
             }
+            else
+            {
+                var user = await _userManager.GetUserAsync(User);
+                Authors = authors
+                    .Select(a => new SelectListItem(a.ShortName, a.ID.ToString(), a.ShortName == user.DisplayName));
+            }
+
         }
 
         public void OnPost()
@@ -34,16 +55,8 @@ namespace kodex.Pages
             string bodyProcessed = Post.Body;
             Post.BodyProcessed = bodyProcessed;
 
-            // todo: add author dropdown, default to current user
-            Post.Author = new Author()
-            {
-                AuthorIDs = "2"
-            };
-
-            if (Post.IsPublic)
-            {
-                Post.DatePublished = DateTimeOffset.Now;
-            }
+            var authorIds = String.Join(',', Authors.Where(a => a.Selected).Select(a => a.Value));
+            Post.Authors = new Authors() { AuthorIDs = authorIds };
 
             if (Post.ID == 0)
             {
@@ -51,6 +64,11 @@ namespace kodex.Pages
                 {
                     PostTypeID = 1
                 };
+
+                if (Post.IsPublic)
+                {
+                    Post.DatePublished = DateTimeOffset.Now;
+                }
 
                 _postsRepository.InsertPost(Post);
             }
