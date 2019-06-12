@@ -15,6 +15,7 @@ else
     <table>
         <tr>
             <th>Edit</th>
+            <th>Delete</th>
             <th>Type</th>
             <th>Author</th>
             <th>Title</th>
@@ -26,6 +27,11 @@ else
         {
         <tr>
             <td><a asp-page="./Post/" asp-route-id="@post.ID">Edit</a></td>
+            <td>
+                <form asp-page-handler="delete" asp-route-id="@post.ID" method="post">
+                    <button>Delete</button>
+                </form>
+            </td>
             <td>@Html.DisplayFor(modelItem => post.PostType.Name)</td>
             <td>@Html.DisplayFor(modelItem => post.Authors.ShortNames)</td>
             <td>@Html.DisplayFor(modelItem => post.Title)</td>

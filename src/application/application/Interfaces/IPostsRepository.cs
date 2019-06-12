@@ -10,10 +10,11 @@ namespace kodex.Application.Interfaces
     {
         Task<List<Author>> GetAuthorsAsync();
         Task<Post> GetByIDAsync(int id);
-        Task<Post> GetByUrl(int year, int month, int day, int datePublishedID);
-        Task<List<Post>> GetAll();
-        Task<List<Post>> GetByOptions(IPostOptions options);
-        Task<bool> InsertPost(Post post);
-        Task<bool> UpdatePost(Post post);
+        Task<Post> GetByUrlAsync(int year, int month, int day, int datePublishedID);
+        Task<List<Post>> GetAllAsync();
+        Task<List<Post>> GetByOptionsAsync(IPostOptions options);
+        Task<bool> DeletePostAsync(Post post);
+        Task<bool> InsertPostAsync(Post post);
+        Task<bool> UpdatePostAsync(Post post);
     }
 }

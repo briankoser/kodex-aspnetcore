@@ -1,10 +1,10 @@
-﻿using System;
+﻿using kodex.Application.Interfaces;
+using kodex.Application.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using kodex.Application.Interfaces;
-using kodex.Application.Models;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Authorization;
 
 namespace kodex.Pages
 {
@@ -22,7 +22,13 @@ namespace kodex.Pages
 
         public async Task OnGetAsync()
         {
-            Posts = await _postsRepository.GetAll();
+            Posts = await _postsRepository.GetAllAsync();
+        }
+
+        public async Task<IActionResult> OnPostDelete(int id)
+        {
+            await _postsRepository.DeletePostAsync(new Post() { ID = id });
+            return RedirectToPage("/admin/posts");
         }
     }
 }

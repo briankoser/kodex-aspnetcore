@@ -12,16 +12,16 @@ namespace kodex.Infrastructure.Data.DBAccess
 {
     public class PostsRepository : SqlRepository, IPostsRepository
     {
+        public PostsRepository(ISqlDataSourceConfig config, ILogger<PostsRepository> logger)
+            : base(config.SqlServerConnectionString, logger)
+        {
+        }
+
         public async Task<List<Author>> GetAuthorsAsync()
         {
             string query = @"SELECT id, firstname AS shortname, fullname 
                                FROM dbo.Author;";
             return (await QueryAsync<Author>(query)).ToList();
-        }
-
-        public PostsRepository(ISqlDataSourceConfig config, ILogger<PostsRepository> logger)
-            : base(config.SqlServerConnectionString, logger)
-        {
         }
 
         public async Task<Post> GetByIDAsync(int id)
@@ -35,7 +35,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
 
-        public async Task<Post> GetByUrl(int year, int month, int day, int datePublishedID)
+        public async Task<Post> GetByUrlAsync(int year, int month, int day, int datePublishedID)
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
@@ -51,7 +51,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 splitOn: "PostTypeID,AuthorIDs")).FirstOrDefault();
         }
 
-        public async Task<List<Post>> GetAll()
+        public async Task<List<Post>> GetAllAsync()
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
@@ -62,7 +62,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
 
-        public async Task<List<Post>> GetByOptions(IPostOptions options)
+        public async Task<List<Post>> GetByOptionsAsync(IPostOptions options)
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
@@ -81,7 +81,25 @@ namespace kodex.Infrastructure.Data.DBAccess
                 splitOn: "PostTypeID,AuthorIDs")).ToList();
         }
 
-        public async Task<bool> InsertPost(Post post)
+        public async Task<bool> DeletePostAsync(Post post)
+        {
+            if (post == null)
+            {
+                throw new ArgumentNullException(nameof(post));
+            }
+
+            string storedProcedure = "dbo.sp_DeletePost";
+            var parameters = new
+            {
+                id = post.ID
+            };
+
+            int rows = await ExecuteStoredProcedureAsync(storedProcedure, parameters);
+
+            return rows > 0;
+        }
+
+        public async Task<bool> InsertPostAsync(Post post)
         {
             if (post == null)
             {
@@ -110,7 +128,7 @@ namespace kodex.Infrastructure.Data.DBAccess
             return rows > 0;
         }
 
-        public async Task<bool> UpdatePost(Post post)
+        public async Task<bool> UpdatePostAsync(Post post)
         {
             if (post == null)
             {

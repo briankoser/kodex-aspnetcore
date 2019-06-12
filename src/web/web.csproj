@@ -19,7 +19,6 @@
     <Folder Include="Views\Shared\PartialViews\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
-    <Folder Include="wwwroot\lib\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\application\application\Application.csproj" />

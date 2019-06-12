@@ -67,7 +67,7 @@ namespace kodex.Pages
 
             if (Post.ID.HasValue)
             {
-                await _postsRepository.UpdatePost(Post);
+                await _postsRepository.UpdatePostAsync(Post);
             }
             else
             {
@@ -81,7 +81,7 @@ namespace kodex.Pages
                     Post.DatePublished = DateTimeOffset.Now;
                 }
 
-                await _postsRepository.InsertPost(Post);
+                await _postsRepository.InsertPostAsync(Post);
             }
 
             return RedirectToPage("/admin/posts");
