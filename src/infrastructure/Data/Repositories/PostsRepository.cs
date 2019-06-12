@@ -71,7 +71,7 @@ namespace kodex.Infrastructure.Data.DBAccess
                                 AND (YEAR(datepublished) = @Year OR @Year IS NULL)
                                 AND (MONTH(datepublished) = @Month OR @Month IS NULL)
                                 AND (DAY(datepublished) = @Day OR @Day IS NULL)
-                                AND (lower(shortname) LIKE '%' + @Author + '%' OR @Author = 'all')
+                                AND (lower(shortnames) LIKE '%' + @Author + '%' OR @Author = 'all')
                                 AND ispublic = 1
                               ORDER BY datepublished DESC;";
             return (await QueryAsync<Post, PostType, Authors, Post>(

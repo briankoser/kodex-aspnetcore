@@ -13,13 +13,17 @@
             <span class="post-update-date">@Html.DisplayFor(modelItem => Model.Post.DateLastUpdatedMessage)</span>
         </span>
     </header>
-    
+
     @if (!String.IsNullOrEmpty(Model.Post.ImageUrl))
     {
         <img src="@Model.Post.ImageUrl" class="article-header-image" />
     }
-    
+
     <div class="article-body">
         @Html.Raw(Model.Post.Body)
     </div>
 </article>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/06-Pages/article.css" />
+}

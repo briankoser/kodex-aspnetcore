@@ -3,7 +3,7 @@
 
 <div asp-validation-summary="All"></div>
 
-<form method="post">
+<form method="post" class="form">
     <fieldset>
         <legend>@ViewData["Title"]</legend>
 
@@ -56,6 +56,10 @@
         <input type="hidden" asp-for="Post.BodyText" id="bodyText" />
     </fieldset>
 </form>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/06-Pages/admin-post.css" />
+}
 
 @section Scripts {
     <script src="~/js/lib/ckeditor.js"></script>
