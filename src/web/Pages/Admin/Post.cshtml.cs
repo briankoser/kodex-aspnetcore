@@ -1,7 +1,7 @@
 ﻿using kodex.Application.Interfaces;
 using kodex.Application.Models;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -39,18 +39,25 @@ namespace kodex.Pages
                 Post = await _postsRepository.GetByIDAsync(id.Value);
                 Authors = authors
                     .Select(a => new SelectListItem(a.ShortName, a.ID.ToString(), Post.Authors.IDs.Contains(a.ID)));
+                ViewData["Title"] = $"Update \"{Post.Title}\"";
             }
             else
             {
                 var user = await _userManager.GetUserAsync(User);
                 Authors = authors
                     .Select(a => new SelectListItem(a.ShortName, a.ID.ToString(), a.ShortName == user.DisplayName));
+                ViewData["Title"] = "New";
             }
 
         }
 
-        public void OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+
             // todo: process body, store in BodyProcessed
             string bodyProcessed = Post.Body;
             Post.BodyProcessed = bodyProcessed;
@@ -58,7 +65,11 @@ namespace kodex.Pages
             var authorIds = String.Join(',', Authors.Where(a => a.Selected).Select(a => a.Value));
             Post.Authors = new Authors() { AuthorIDs = authorIds };
 
-            if (Post.ID == 0)
+            if (Post.ID.HasValue)
+            {
+                await _postsRepository.UpdatePost(Post);
+            }
+            else
             {
                 Post.PostType = new PostType()
                 {
@@ -70,12 +81,10 @@ namespace kodex.Pages
                     Post.DatePublished = DateTimeOffset.Now;
                 }
 
-                _postsRepository.InsertPost(Post);
+                await _postsRepository.InsertPost(Post);
             }
-            else
-            {
-                _postsRepository.UpdatePost(Post);
-            }
+
+            return RedirectToPage("/admin/posts");
         }
     }
 }

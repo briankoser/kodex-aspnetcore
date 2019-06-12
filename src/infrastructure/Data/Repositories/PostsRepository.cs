@@ -55,7 +55,7 @@ namespace kodex.Infrastructure.Data.DBAccess
         {
             string query = @"SELECT * 
                                FROM dbo.Posts 
-                              ORDER BY datepublished DESC, title;";
+                              ORDER BY (CASE WHEN datepublished IS NULL THEN 0 ELSE 1 END), datepublished DESC, title;";
             return (await QueryAsync<Post, PostType, Authors, Post>(
                 query,
                 (post, postType, authors) => { post.PostType = postType; post.Authors = authors; return post; },

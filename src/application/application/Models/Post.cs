@@ -8,7 +8,7 @@ namespace kodex.Application.Models
     {
         private const string DateFormat = "{0:yyyy-MM-dd}";
 
-        public int ID { get; set; }
+        public int? ID { get; set; }
         public PostType PostType { get; set; }
         public Authors Authors { get; set; }
         public string Title { get; set; }
