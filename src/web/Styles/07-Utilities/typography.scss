@@ -6,3 +6,27 @@
 .digit-string {
     letter-spacing: 0.05em;
 }
+
+.fraction {
+    -webkit-font-feature-settings: "frac" 1;
+       -moz-font-feature-settings: "frac" 1;
+            font-feature-settings: "frac" 1;
+}
+
+.small-caps {
+    text-transform: uppercase;
+    -webkit-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+       -moz-font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+            font-feature-settings: "kern" 1, "liga" 1, "pnum" 1, "tnum" 0, "onum" 1, "lnum" 0, "smcp" 1, "c2sc" 1;
+}
+
+.text-glow {
+    text-shadow: 0 0 5px white, 0 0 10px yellow;
+}
+
+.uppercase {
+    -webkit-font-feature-settings: 'lnum' 1;
+       -moz-font-feature-settings: 'lnum' 1;
+            font-feature-settings: 'lnum' 1;
+    text-transform: uppercase;
+}

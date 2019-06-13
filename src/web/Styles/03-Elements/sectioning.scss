@@ -37,10 +37,22 @@ table {
     @include margin-top(0);
 }
 
+pre {
+    page-break-inside: avoid;
+}
+
 p {
         -ms-hyphens: auto;
     -webkit-hyphens: auto;
             hyphens: auto;
+}
+
+pre,
+code,
+samp,
+keyboard {
+    font-variant-ligatures: no-common-ligatures;
+    font-variant-numeric: tabular-nums;
 }
 
 blockquote {

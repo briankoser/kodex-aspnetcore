@@ -2,6 +2,21 @@
 
 /* form, fieldset, legend, label, input, button, select, optgroup, option, 
   datalist, textarea, output */
+input,
+select {
+    vertical-align: middle;
+}
+
+input[type='color'], 
+input[type='date'], 
+input[type='datetime'], 
+input[type='datetime-local'], 
+input[type='number'], 
+input[type='range'], 
+input[type='tel'], 
+input[type='week'] {
+    font-feature-settings: "lnum";
+}
 
 form {
     border-color: black;

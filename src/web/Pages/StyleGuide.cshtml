@@ -261,6 +261,30 @@
         <li>Simmons</li>
         <li>Stephenson</li>
     </ul>
+
+    <ol>
+        <li>First item</li>
+        <li>
+            Second item
+            <ol>
+                <li>Nested ordered list</li>
+                <li>Another item</li>
+            </ol>
+        </li>
+        <li>Last item</li>
+    </ol>
+
+    <ul>
+        <li>First item</li>
+        <li>
+            Second item
+            <ul>
+                <li>Nested unordered list</li>
+                <li>Another item</li>
+            </ul>
+        </li>
+        <li>Last item</li>
+    </ul>
 </div>
 
 <h2>Phrasing</h2>
@@ -273,10 +297,21 @@
     <p>Superscript example: on the 17<sup>th</sup> day of Christmas, my true love gave me a fish.</p>
     <small>This is small text.</small>
     <p>A regular abbreviation <abbr>HTML</abbr> and a small caps abbreviation <abbr class="smallcaps">HTML</abbr></p>
+    <p><kbd><kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Del</kbd></kbd></p>
 </div>
 
 <h2>Typography</h2>
-<!-- todo: typography -->
+<div class="demo">
+    <p class="constant-line-breaks">This paragraph has constant line breaks. Perspiciatis voluptatem deserunt consequatur numquam tenetur accusantium. Nesciunt qui sint et repellat rerum eum quos illo. Dolores incidunt quisquam nihil. Est molestias repellat minima possimus corporis accusantium qui. Similique et rerum in ullam. Impedit assumenda id corporis aliquam sapiente quo.</p>
+    <p>Digits without tracking: <span>1234567890</span></p>
+    <p>Digits with tracking: <span class="digit-string">1234567890</span></p>
+    <p>No fraction: 1/2</p>
+    <p>Fraction: <span class="fraction">1/2</span></p>
+    <p>lower case</p>
+    <p class="uppercase">uppercase</p>
+    <p class="small-caps">small caps</p>
+    <p class="text-glow" style="background-color: black; color: white;">This text is glowing</p>
+</div>
 
 <h2>Horizontal Rule</h2>
 <div class="demo">

@@ -2,6 +2,9 @@
 table {
     border-collapse: collapse;
     font-variant-numeric: lining-nums tabular-nums;
+    -webkit-font-feature-settings: 'kern' 0, 'liga', 'lnum', 'onum' 0, 'pnum' 0, 'tnum', 'zero';
+       -moz-font-feature-settings: 'kern' 0, 'liga', 'lnum', 'onum' 0, 'pnum' 0, 'tnum', 'zero';
+            font-feature-settings: 'kern' 0, 'liga', 'lnum', 'onum' 0, 'pnum' 0, 'tnum', 'zero';
 }
 
 table .numeric-column {
@@ -10,6 +13,13 @@ table .numeric-column {
 
 caption {
     font-family: 'Concourse C4', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+thead,
+tfoot {
+    -webkit-font-feature-settings: 'dlig' 0, 'kern', 'liga', 'lnum' 0, 'onum', 'pnum', 'tnum' 0;
+       -moz-font-feature-settings: 'dlig' 0, 'kern', 'liga', 'lnum' 0, 'onum', 'pnum', 'tnum' 0;
+            font-feature-settings: 'dlig' 0, 'kern', 'liga', 'lnum' 0, 'onum', 'pnum', 'tnum' 0;
 }
 
 tr {
