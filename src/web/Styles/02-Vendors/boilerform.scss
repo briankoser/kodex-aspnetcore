@@ -1,0 +1,71 @@
+﻿// https://boilerform.design/
+// modified from original. some elements are integrated into forms.scss
+
+.c-check-field {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.c-check-field__input {
+    display: block;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(1px);
+    white-space: nowrap;
+    position: absolute;
+}
+
+.c-check-field__decor {
+    display: block;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background: #eeeeee;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+}
+
+.c-check-field__decor:after {
+    content: "";
+    speak: none;
+    display: block;
+    opacity: 0;
+    width: 70%;
+    height: 70%;
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    background: #888888;
+    border-radius: 1px;
+}
+
+.c-check-field__label {
+    padding: 0 0 0 10px;
+    cursor: pointer;
+}
+
+.c-check-field--radio {
+    .c-check-field__decor,
+    .c-check-field__decor:after {
+        border-radius: 50%;
+    }
+}
+
+.c-check-field__input:checked ~ [class*="decor"]:after {
+    opacity: 1;
+}
+
+.c-check-field__input:focus ~ [class*="decor"] {
+    outline: 1px dotted #212121;
+    outline: 5px auto -webkit-focus-ring-color;
+}
+
+.c-check-field + .c-check-field {
+    padding-top: 10px;
+}

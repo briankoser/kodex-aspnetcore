@@ -26,6 +26,16 @@
     margin-top: #{ $number * $mobile-line-height + 'rem'};
 }
 
+@mixin padding-bottom($number) {
+    padding-bottom: #{ $number * $mobile-leading + 'px'};
+    padding-bottom: #{ $number * $mobile-line-height + 'rem'};
+}
+
+@mixin padding-top($number) {
+    padding-top: #{ $number * $mobile-leading + 'px'};
+    padding-top: #{ $number * $mobile-line-height + 'rem'};
+}
+
 //@mixin margin-top($number) {
 //    margin-top: #{ $number * $leading + 'px'};
 //    margin-top: #{ $number * $leading-rem + 'rem'};

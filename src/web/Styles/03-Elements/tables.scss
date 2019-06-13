@@ -12,6 +12,10 @@ caption {
     font-family: 'Concourse C4', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
+tr {
+    padding-bottom: 0;
+}
+
 td,
 th {
     line-height: 1;
@@ -37,6 +41,10 @@ th.oblique-heading {
     td {
         display: block;
         text-align: left;
+    }
+
+    tr {
+        padding-bottom: 1em;
     }
 
     thead,

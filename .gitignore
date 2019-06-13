@@ -336,3 +336,4 @@ src/web/wwwroot/fonts/concourse
 src/web/wwwroot/css/
 src/web/wwwroot/js/*.min.js
 src/web/wwwroot/js/*.min.js.map
+src/web/wwwroot/lib/

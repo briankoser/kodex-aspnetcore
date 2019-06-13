@@ -5,7 +5,13 @@
     "outputFileName": "wwwroot/css/site.css",
     // An array of relative input file paths. Globbing patterns supported
     "inputFiles": [
-      "wwwroot/css/**/*.css"
+      "wwwroot/css/01-Base/*.css",
+      "wwwroot/css/02-Vendors/*.css",
+      "wwwroot/css/03-Elements/*.css",
+      "wwwroot/css/04-Components/*.css",
+      "wwwroot/css/05-Layouts/*.css",
+      // purposely not bundling 06-Pages: they should be included for their respective pages instead of bundled with everything
+      "wwwroot/css/07-Utilities/*.css"
     ],
     "minify": {
       "enabled": false

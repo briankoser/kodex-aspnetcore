@@ -1,0 +1,48 @@
+﻿@page
+@model kodex.Pages.AdminPostsModel
+@{
+    ViewData["Title"] = "Manage Posts";
+}
+<h1>@ViewData["Title"]</h1>
+
+
+@if (Model.Posts == null || Model.Posts.Count == 0)
+{
+    @("Nothing found")
+}
+else
+{
+    <table>
+        <tr>
+            <th>Edit</th>
+            <th>Delete</th>
+            <th>Type</th>
+            <th>Author</th>
+            <th>Title</th>
+            <th>Publish Date</th>
+            <th>Description</th>
+            <th>Published?</th>
+        </tr>
+        @foreach (var post in Model.Posts)
+        {
+            <tr>
+                <td><a asp-page="./Post/" asp-route-id="@post.ID">Edit</a></td>
+                <td>
+                    <form asp-page-handler="delete" asp-route-id="@post.ID" method="post">
+                        <button>Delete</button>
+                    </form>
+                </td>
+                <td>@Html.DisplayFor(modelItem => post.PostType.Name)</td>
+                <td>@Html.DisplayFor(modelItem => post.Authors.ShortNames)</td>
+                <td>@Html.DisplayFor(modelItem => post.Title)</td>
+                <td>@Html.DisplayFor(modelItem => post.DatePublished)</td>
+                <td>@Html.DisplayFor(modelItem => post.Description)</td>
+                <td>@(post.IsPublic ? "Published" : "Draft")</td>
+            </tr>
+        }
+    </table>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/06-Pages/admin-posts.css" />
+}

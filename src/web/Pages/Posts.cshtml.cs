@@ -37,7 +37,7 @@ namespace kodex.Pages
             };
 
             Title = $"{ToTitleCase(categoryString)} {GetAuthorString(author)} {GetDateString(year, month, day)}";
-            Posts = await _postsRepository.GetByOptions(options);
+            Posts = await _postsRepository.GetByOptionsAsync(options);
 
             ViewData["Title"] = Title;
         }

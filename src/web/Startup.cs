@@ -37,6 +37,7 @@ namespace kodex
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1)
                 .AddRazorPagesOptions(options =>
                 {
+                    options.Conventions.AddPageRoute("/Admin/Post", "/new");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}/{year:int}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{category}/{year:int}/{month:int}");
