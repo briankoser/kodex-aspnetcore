@@ -13,7 +13,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Styles\06-Pages\" />
     <Folder Include="Views\" />
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\PartialViews\" />
