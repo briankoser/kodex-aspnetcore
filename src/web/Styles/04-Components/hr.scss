@@ -1,0 +1,13 @@
+﻿.hr-container {
+    position: relative;
+    margin: 1em;
+    padding: 1em;
+
+    .hr-image {
+        height: 1rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+    }
+}

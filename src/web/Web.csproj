@@ -14,7 +14,7 @@
   <ItemGroup>
     <Folder Include="Extensions\" />
     <Folder Include="Views\" />
-    <Folder Include="Views\Shared\Components\" />
+    <Folder Include="Views\Shared\ViewComponents\" />
     <Folder Include="Views\Shared\PartialViews\" />
     <Folder Include="wwwroot\css\" />
     <Folder Include="wwwroot\images\" />
