@@ -55,6 +55,7 @@ namespace kodex.Pages
         {
             if (!ModelState.IsValid)
             {
+                ViewData["Title"] = "Error";
                 return Page();
             }
 
