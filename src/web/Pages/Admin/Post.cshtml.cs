@@ -68,6 +68,11 @@ namespace kodex.Pages
 
             if (Post.ID.HasValue)
             {
+                if (Post.IsPublic && Post.DatePublished == null)
+                {
+                    Post.DatePublished = DateTimeOffset.Now;
+                }
+
                 await _postsRepository.UpdatePostAsync(Post);
             }
             else
