@@ -21,15 +21,18 @@ Koser family site, written in ASP.NET Core MVC
 ```
 
 ## To Deploy
-Create new profile
-1. Connection
+1. In VS, Build > Publish
+2. New Profile...
+3. IIS, FTP, etc
+4. Create profile
+5. Enter Connection info
    1. Publish method: Web Deploy
    2. Server: <FTP server IP address>
    3. Site name: koser.us
    4. User name: <FTP username>
    5. Password: <FTP password>
    6. Destination URL: http://koser.us
-2. Settings
+6. Enter Settings info
    1. Configuration: Release
    2. Target framework: netcoreapp2.1
    3. Deployment Mode: Framework-Dependent
