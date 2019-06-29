@@ -71,6 +71,7 @@
             .create(document.querySelector('#editor'))
             .then(editor => {
                 console.log(editor);
+                window.editor = editor;
 
                 // generate suggested excerpt from body
                 editor.ui.focusTracker.on('change:isFocused', (evt, name, value) => {

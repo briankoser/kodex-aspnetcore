@@ -1,10 +1,4 @@
-﻿/* hr */
-hr {
-    height: 1em;
-    border: 0;
-    background: url(fleuron.svg) center no-repeat; /* todo: get image; fleuron? five dots to match logo (like The Ringer) */
-    background-size: contain;
-}
+﻿/* hr, ::selection */
 
 ::-moz-selection {
     background: black;
