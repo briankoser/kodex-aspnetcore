@@ -1,6 +1,7 @@
 ﻿using kodex.Application.Interfaces;
 using kodex.Application.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -18,16 +19,18 @@ namespace kodex.Pages
     {
         private readonly UserManager<User> _userManager;
         private IPostsRepository _postsRepository;
+        private IHostingEnvironment _env;
 
         public IEnumerable<SelectListItem> Authors { get; set; }
         public Post Post { get; set; }
 
 
 
-        public AdminPostModel(UserManager<User> userManager, IPostsRepository postsRepository)
+        public AdminPostModel(UserManager<User> userManager, IPostsRepository postsRepository, IHostingEnvironment env)
         {
             _userManager = userManager;
             _postsRepository = postsRepository;
+            _env = env;
         }
 
         public async Task OnGetAsync(int? id)
@@ -59,9 +62,7 @@ namespace kodex.Pages
                 return Page();
             }
 
-            // todo: process body, store in BodyProcessed
-            string bodyProcessed = Post.Body;
-            Post.BodyProcessed = bodyProcessed;
+            Post.BodyProcessed = await ProcessBody(Post.Body);
 
             var authorIds = String.Join(',', Authors.Where(a => a.Selected).Select(a => a.Value));
             Post.Authors = new Authors() { AuthorIDs = authorIds };
@@ -91,6 +92,20 @@ namespace kodex.Pages
             }
 
             return RedirectToPage("/admin/posts");
+        }
+
+        private async Task<string> ProcessBody(string body)
+        {
+            string processedBody = await InsertCustomHorizontalRule(body);
+            return processedBody;
+        }
+
+        private async Task<string> InsertCustomHorizontalRule(string body)
+        {
+            string hrHtmlPath = System.IO.Path.Combine(_env.ContentRootPath, @"TagHelpers\Templates\HorizontalRuleTemplate.html");
+            string hr = await System.IO.File.ReadAllTextAsync(hrHtmlPath);
+            body = body.Replace("<hr class=\"hr-placeholder\">", hr);
+            return body;
         }
     }
 }
