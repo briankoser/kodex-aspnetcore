@@ -1,0 +1,11 @@
+﻿@import "../01-Base/mixins.scss";
+
+.article-list {
+    article {
+        @include margin-top(2);
+    }
+
+    h2 {
+        @include margin-bottom(0.5);
+    }
+}

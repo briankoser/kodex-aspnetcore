@@ -8,17 +8,23 @@
 }
 else
 {
-    foreach (var post in Model.Posts)
-    {
-        <article>
-            <header>
-                <h2><a href="/@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
-                <span class="post-header">
-                    <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
-                    <span class="post-author">@Html.DisplayFor(modelItem => post.Authors.ShortNames)</span> ·
-                    <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
-                </span>
-            </header>
-        </article>
-    }
+    <div class="article-list">
+        @foreach (var post in Model.Posts)
+        {
+            <article>
+                <header>
+                    <h2><a href="/@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></h2>
+                    <span class="post-header">
+                        <span class="post-category">@Html.DisplayFor(modelItem => post.PostType.Name)</span> ·
+                        <span class="post-author">@Html.DisplayFor(modelItem => post.Authors.ShortNames)</span> ·
+                        <span class="post-date">@Html.DisplayFor(modelItem => post.DatePublished)</span>
+                    </span>
+                </header>
+            </article>
+        }
+    </div>
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/06-Pages/article-list.css" />
 }
