@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using System;
 using Web;
 
 namespace kodex
@@ -46,8 +47,13 @@ namespace kodex
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}");
                     options.Conventions.AddPageRoute("/Posts", "/{author}/{year:int}/{month:int}/{day:int}");
                 });
+
             services.AddIdentity<User, Role>();
-            services.ConfigureApplicationCookie(options => options.LoginPath = "/login");
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/login";
+                options.ExpireTimeSpan = TimeSpan.FromDays(7);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
