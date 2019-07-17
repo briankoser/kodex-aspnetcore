@@ -5,6 +5,7 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+<a asp-page="./Post">New</a>
 
 @if (Model.Posts == null || Model.Posts.Count == 0)
 {
@@ -25,20 +26,29 @@ else
         </tr>
         @foreach (var post in Model.Posts)
         {
-            <tr>
-                <td><a asp-page="./Post/" asp-route-id="@post.ID">Edit</a></td>
-                <td>
-                    <form asp-page-handler="delete" asp-route-id="@post.ID" method="post">
-                        <button>Delete</button>
-                    </form>
-                </td>
-                <td>@Html.DisplayFor(modelItem => post.PostType.Name)</td>
-                <td>@Html.DisplayFor(modelItem => post.Authors.ShortNames)</td>
+        <tr>
+            <td><a asp-page="./Post/" asp-route-id="@post.ID">Edit</a></td>
+            <td>
+                <form asp-page-handler="delete" asp-route-id="@post.ID" method="post">
+                    <button>Delete</button>
+                </form>
+            </td>
+            <td>@Html.DisplayFor(modelItem => post.PostType.Name)</td>
+            <td>@Html.DisplayFor(modelItem => post.Authors.ShortNames)</td>
+
+            @if (post.IsPublic)
+            {
+                <td><a href="/@post.Url">@Html.DisplayFor(modelItem => post.Title)</a></td>
+            }
+            else
+            {
                 <td>@Html.DisplayFor(modelItem => post.Title)</td>
-                <td>@Html.DisplayFor(modelItem => post.DatePublished)</td>
-                <td>@Html.DisplayFor(modelItem => post.Description)</td>
-                <td>@(post.IsPublic ? "Published" : "Draft")</td>
-            </tr>
+            }
+
+            <td>@Html.DisplayFor(modelItem => post.DatePublished)</td>
+            <td>@Html.DisplayFor(modelItem => post.Description)</td>
+            <td>@(post.IsPublic ? "Published" : "Draft")</td>
+        </tr>
         }
     </table>
 }
