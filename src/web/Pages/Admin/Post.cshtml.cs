@@ -102,7 +102,7 @@ namespace kodex.Pages
 
         private async Task<string> InsertCustomHorizontalRule(string body)
         {
-            string hrHtmlPath = System.IO.Path.Combine(_env.ContentRootPath, @"TagHelpers\Templates\HorizontalRuleTemplate.html");
+            string hrHtmlPath = System.IO.Path.Combine(_env.ContentRootPath, @"wwwroot\templates\HorizontalRuleTemplate.html");
             string hr = await System.IO.File.ReadAllTextAsync(hrHtmlPath);
             body = body.Replace("<hr class=\"hr-placeholder\">", hr);
             return body;
