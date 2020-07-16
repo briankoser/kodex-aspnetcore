@@ -5,7 +5,7 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "3.1.0",
-    "lodash": ">=4.17.13",
+    "lodash": ">=4.17.19",
     "minimatch": ">=3.0.2"
   }
 }
